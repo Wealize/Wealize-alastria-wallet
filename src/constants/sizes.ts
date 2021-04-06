@@ -1,0 +1,16 @@
+export const ICON_SIZE = {
+  CHECK: 15.5,
+  CLOSE: 20
+}
+export const TOAST_POSITION = {
+  X_OFFSET: 0,
+  Y_OFFSET: 400
+}
+export const DIVDER_SIZE = 8
+export const ACTIVITY_INDICATOR_SIZE = 35
+export const PROGRESS_LOADING = {
+  DEFAULT: 0,
+  STEP_START: 0.3,
+  STEP_REVOKE_IN_BLOCKCHAIN: 0.6,
+  STEP_REVOKE_IN_BACKEND: 0.9
+}

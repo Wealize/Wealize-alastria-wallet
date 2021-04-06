@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OnboardginComponent should render correctly 1`] = `
+<View
+  className="sc-bdfBwQ ifZCYK"
+>
+  <Text
+    className="sc-dlfnbm fQndrk"
+  >
+    Frase de seguridad
+  </Text>
+  <Text
+    className="sc-hKgILt ikmTPr"
+  >
+    Esta frase de seguridad permite recuperar tu cuenta en caso de que olvides el acceso. Recomendamos que la memorices o copies en un lugar seguro. Puedes consultarla siempre que lo necesites tras iniciar sesión. Por seguridad, nunca la reveles a otra persona.
+  </Text>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      caretHidden={true}
+      className="sc-iBPRYJ hGdVlI"
+      editable={false}
+      multiline={true}
+      onChangeText={[Function]}
+      rejectResponderTermination={true}
+      underlineColorAndroid="transparent"
+      value=""
+    />
+    <View
+      accessibilityIgnoresInvertColors={true}
+      style={Object {}}
+    >
+      <Image
+        blurRadius={10}
+        className="sc-jSgupP cayINm"
+        source={
+          Object {
+            "testUri": "../../../src/assets/img/background-grey.png",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "height": undefined,
+              "width": undefined,
+            },
+            Object {
+              "borderRadius": 20,
+            },
+          ]
+        }
+      />
+      <Text
+        className="sc-gKsewC bBuTnQ"
+      >
+        Pulse aquí para revelar su frase de seguridad
+      </Text>
+    </View>
+  </View>
+  <View
+    className="sc-gsTCUz kyMDVX"
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 3,
+            "overflow": "hidden",
+          },
+          Object {
+            "borderRadius": 3,
+          },
+          undefined,
+          false,
+        ]
+      }
+    >
+      <View
+        accessibilityRole="button"
+        accessibilityState={
+          Object {
+            "busy": false,
+            "disabled": false,
+          }
+        }
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#ca2b63",
+              "borderColor": "#2089dc",
+              "borderRadius": 45,
+              "borderWidth": 0,
+              "flexDirection": "row",
+              "height": 39,
+              "justifyContent": "center",
+              "padding": 8,
+              "width": 224,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "white",
+                "fontSize": 18,
+                "paddingVertical": 1,
+                "textAlign": "center",
+              }
+            }
+          >
+            Continuar
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "opacity": 0,
+        "position": "absolute",
+        "right": 0,
+        "transform": Array [
+          Object {
+            "translateY": 48,
+          },
+        ],
+        "zIndex": 99,
+      }
+    }
+  />
+</View>
+`;

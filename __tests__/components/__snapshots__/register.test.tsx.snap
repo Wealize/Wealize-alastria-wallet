@@ -1,0 +1,252 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OnboardginComponent should render correctly 1`] = `
+<View
+  className="sc-bdfBwQ sc-gsTCUz ifZCYK PmSxj"
+>
+  <Text
+    className="sc-dlfnbm gJLMAR"
+  >
+    Registro
+  </Text>
+  <Text
+    className="sc-hKgILt gxnHSy"
+  >
+    Añade seguridad a tu aplicación creando un PIN de seguridad
+  </Text>
+  <View
+    className="sc-eCssSg kAMxjV"
+  >
+    <View
+      style={
+        Object {
+          "paddingHorizontal": 10,
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "borderBottomWidth": 1,
+            "borderColor": "#86939e",
+            "flexDirection": "row",
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+            ],
+          }
+        }
+      >
+        <TextInput
+          allowFontScaling={true}
+          className="sc-jSgupP"
+          editable={true}
+          keyboardType="decimal-pad"
+          onChangeText={[Function]}
+          placeholder="Pin de Seguridad"
+          placeholderTextColor="#86939e"
+          rejectResponderTermination={true}
+          selectionColor="#00b0ff"
+          style={
+            Object {
+              "color": "#242424",
+              "flex": 1,
+              "fontSize": 18,
+              "minHeight": 40,
+            }
+          }
+          testID="RNE__Input__text-input"
+          underlineColorAndroid="transparent"
+          value=""
+        />
+      </View>
+      <Text
+        style={
+          Object {
+            "color": "#EE3F61",
+            "fontSize": 12,
+            "margin": 5,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "paddingHorizontal": 10,
+          "width": "100%",
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "borderBottomWidth": 1,
+            "borderColor": "#86939e",
+            "flexDirection": "row",
+            "transform": Array [
+              Object {
+                "translateX": 0,
+              },
+            ],
+          }
+        }
+      >
+        <TextInput
+          allowFontScaling={true}
+          className="sc-jSgupP"
+          editable={true}
+          keyboardType="decimal-pad"
+          onChangeText={[Function]}
+          placeholder="Repetir Pin"
+          placeholderTextColor="#86939e"
+          rejectResponderTermination={true}
+          selectionColor="#00b0ff"
+          style={
+            Object {
+              "color": "#242424",
+              "flex": 1,
+              "fontSize": 18,
+              "minHeight": 40,
+            }
+          }
+          testID="RNE__Input__text-input"
+          underlineColorAndroid="transparent"
+          value=""
+        />
+      </View>
+      <Text
+        style={
+          Object {
+            "color": "#EE3F61",
+            "fontSize": 12,
+            "margin": 5,
+          }
+        }
+      >
+        
+      </Text>
+    </View>
+    <View
+      accessibilityRole="checkbox"
+      accessibilityState={
+        Object {
+          "checked": false,
+        }
+      }
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#ededed",
+          "borderRadius": 3,
+          "borderWidth": 0,
+          "height": 20,
+          "margin": 5,
+          "marginLeft": 1,
+          "marginRight": 10,
+          "opacity": 1,
+          "padding": 10,
+          "paddingTop": 8,
+        }
+      }
+      testID="checkbox"
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "#bfbfbf",
+                "fontSize": 24,
+              },
+              Object {
+                "minWidth": 24,
+              },
+              Object {
+                "fontFamily": "FontAwesome",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          className="sc-iBPRYJ hHqwJk"
+          onPress={[Function]}
+        >
+          Aceptar términos y condiciones
+        </Text>
+      </View>
+    </View>
+  </View>
+  <View
+    className="sc-pFZIQ dpQIsn"
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "justifyContent": "flex-end",
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#CCCCCC",
+            "borderRadius": 45,
+            "height": 39,
+            "justifyContent": "center",
+            "width": 224,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#ffffff",
+              "fontSize": 16,
+            }
+          }
+        >
+          Comenzar
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
+`;

@@ -1,0 +1,20 @@
+export const SCREEN = {
+  ACCREDITATION_LIST: 'AccreditationsList',
+  ALASTRIA_CREATION_PROCESS: 'AlastriaCreationProcess',
+  ALASTRIA_TOKEN_QR_READER: 'AlastriaTokenQrReader',
+  CREDENTIAL_PR_INFO: 'CredentialPrInfo',
+  CREDENTIAL_SHARE: 'CredentialShare',
+  CREDENTIAL_SHARE_INFO: 'CredentialShareInfo',
+  HISTORIC_LIST: 'HistoricList',
+  IMAGEN_VIEWER: 'ImagenViewer',
+  LOGIN: 'Login',
+  ONBOARDING: 'OnBoarding',
+  PDF_VIEWER: 'PdfViewer',
+  PRESENTATION_LIST: 'PresentationsList',
+  QR_READER: 'QrReader',
+  RECOVERY: 'Recovery',
+  REGISTER: 'Register',
+  SECURITY_PHRASE: 'SecurityPhrase',
+  TERMS_AND_CONDITIONS: 'TermsAndConditions',
+  ABOUT_HELP: 'AboutHelp'
+}
