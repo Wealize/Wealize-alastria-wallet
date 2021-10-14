@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TouchableButton should render correctly TouchableButton 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "flex-end",
+    }
+  }
+>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#f06078",
+        "borderRadius": 45,
+        "height": 39,
+        "justifyContent": "center",
+        "overflow": "hidden",
+        "width": 224,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#ffffff",
+          "fontSize": 16,
+        }
+      }
+    >
+      title
+    </Text>
+  </View>
+</View>
+`;

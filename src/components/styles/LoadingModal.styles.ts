@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { View, Text } from 'react-native'
+import { LinearProgress } from 'react-native-elements'
 
 export const ModalContainer = styled(View)`
   width: 240px;
@@ -12,3 +13,7 @@ export const ModalText = styled(Text)`
   text-align: center;
   font-weight: bold;
 `
+
+export const LinearProgressStyled = styled(LinearProgress).attrs({
+  color: '#f06078'
+})``

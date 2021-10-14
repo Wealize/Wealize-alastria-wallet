@@ -1,6 +1,5 @@
 import AsyncStorage from '@react-native-community/async-storage'
 
-import { InstitutionData } from '../interfaces/institutionData'
 
 export const STORAGE_KEYS = {
   IS_WALLET_CREATED: 'isWalletCreated',
@@ -27,13 +26,6 @@ export default class LocalStorageService {
     }
   }
 
-  public static async storeAssociatedCenters(key: string, value: InstitutionData[]) {
-    try {
-      await AsyncStorage.setItem(key, JSON.stringify(value))
-    } catch (err) {
-      throw new Error('Error storing data in LocalStorage')
-    }
-  }
 
   public static async getData(key: string): Promise<string> {
     try {
@@ -48,15 +40,6 @@ export default class LocalStorageService {
     try {
       const keyString = await AsyncStorage.getItem(key)
       return keyString ? this.StringToBool(keyString) : false
-    } catch (err) {
-      throw new Error('Error getting data in LocalStorage')
-    }
-  }
-
-  public static async getAssociatedCenters(): Promise<InstitutionData[]> {
-    try {
-      const keyString = await AsyncStorage.getItem(STORAGE_KEYS.ASSOCIATED_CENTERS)
-      return keyString ? JSON.parse(keyString) : []
     } catch (err) {
       throw new Error('Error getting data in LocalStorage')
     }

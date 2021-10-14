@@ -89,7 +89,6 @@ export const AccordionContainer = styled(ViewContainer)`
   padding-left: 0px;
   padding-right: 0px;
   padding-bottom: 5px;
-  border-top-left-radius: 40px;
   background-color: ${Colors.mainBackground};
 `
 

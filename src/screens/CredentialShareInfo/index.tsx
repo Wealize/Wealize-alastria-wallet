@@ -38,6 +38,7 @@ import { showDocumentFileType, showTypeText } from '../../utils/translateTypes'
 import { HistoricRepository } from '../../data/HistoricRepository'
 import { CREDENTIAL } from '../../constants/actionTypes'
 import { useGlobalState } from '../../context/Actions/ActionContext'
+import CredentialsService from '../../services/CredentialsService'
 
 const CredentialShareInfo = ({
   componentId,
@@ -47,8 +48,8 @@ const CredentialShareInfo = ({
   const [dataCredentials] = useGlobalState('dataCredentials')
   const [entityData, setEntityData] = useState<EntityData | null>(null)
   const [isLoading, setIsLoading] = useState(false)
-  const credentialVictimInfo = credentialInfo?.vc.credentialSubject.victimInfo
-  const { info_type: infoType } = credentialVictimInfo || {}
+  const credentialSubjectInfo = credentialInfo?.vc.credentialSubject.subjectInfo
+  const { info_type: infoType } = credentialSubjectInfo || {}
 
   useEffect(() => {
     loadEntityData()
@@ -90,10 +91,11 @@ const CredentialShareInfo = ({
       setStackRoot(componentId, SCREEN.ACCREDITATION_LIST)
     } else {
       try {
-        if (credentialInfo && entityData) {
+        if (credentialInfo && entityData && jwtData) {
           await CredentialRepository.saveCredential(
             parsedCredential(credentialInfo, entityData)
           )
+          await CredentialsService.registerInBlockchain([jwtData])
           AlertWithOutButtonDissmissable(
             CREDENTIAL_SHARE_INFO.ALERT.SUCCESS.TITLE,
             CREDENTIAL_SHARE_INFO.ALERT.SUCCESS.SUBTITLE
@@ -122,12 +124,12 @@ const CredentialShareInfo = ({
       issuerDid: credentialInfo.iss,
       data: jwtData || '',
       key: infoType || '',
-      value: JSON.stringify(credentialVictimInfo),
+      value: JSON.stringify(credentialSubjectInfo),
       created: String(credentialInfo.iat)
     }
   }
 
-  const saveCredentialInHistorics = (
+  const saveCredentialInHistorics = async (
     credentialInfo: CredentialInfoPayload,
     entityData: EntityData
   ) => {
@@ -136,7 +138,7 @@ const CredentialShareInfo = ({
         credentialInfo,
         entityData
       )
-      HistoricRepository.saveHistoric({
+      await HistoricRepository.saveHistoric({
         data: data,
         datetime: created,
         entity: issuerName,
@@ -170,8 +172,8 @@ const CredentialShareInfo = ({
               </Subtitle>
               <SubtitleType>
                 {showTypeText(infoType)}{' '}
-                {credentialVictimInfo &&
-                  showDocumentFileType(credentialVictimInfo)}
+                {credentialSubjectInfo &&
+                  showDocumentFileType(credentialSubjectInfo)}
               </SubtitleType>
             </ContainerSubtitle>
 

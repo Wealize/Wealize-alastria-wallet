@@ -11,15 +11,17 @@ export interface PresentationRequestPayload {
   iss: string
   iat: number
   cbu: string
-  vc?: {}
-  pr: {
-    '@context': string[]
-    type: string[]
-    procHash: string
-    procUrl: string
-    data: PresentationRequestData[]
-  }
+  pr: PresentationContent
   jti: string
+  vc?: Object
+}
+
+export interface PresentationContent {
+  '@context': string[]
+  type: string[]
+  procHash: string
+  procUrl: string
+  data: PresentationRequestData[]
 }
 
 export interface PresentationRequest {
@@ -29,4 +31,9 @@ export interface PresentationRequest {
   }
   payload: PresentationRequestPayload
   signature: string
+}
+
+export interface PresetationResolve {
+  presentationJwt: string
+  presentationCbu: string
 }

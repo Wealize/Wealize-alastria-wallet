@@ -3,8 +3,11 @@ import '@ethersproject/shims'
 import { ethers } from 'ethers'
 
 import { KeyChainData, setKeychainDataObject } from '../utils/keychain'
+import { WalletMnemonicPhrase } from '../interfaces/wallet'
 
-export const createEncryptedWallet = async (pin: string) => {
+export const createEncryptedWallet = async (
+  pin: string
+): Promise<WalletMnemonicPhrase> => {
   const wallet = ethers.Wallet.createRandom()
   const encryptedWallet = await wallet.encrypt(pin)
 

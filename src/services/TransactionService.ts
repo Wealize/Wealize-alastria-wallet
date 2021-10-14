@@ -1,5 +1,5 @@
 import Web3 from 'web3'
-import { WEALIZE_NODE_IP } from '@env'
+import { NODE_IP } from '@env'
 import { transactionFactory, UserIdentity } from 'alastria-identity-lib'
 
 import { Transaction } from '../interfaces/transaction'
@@ -10,7 +10,7 @@ export default class TransactionService {
     psmHash: string,
     url: string
   ): Transaction {
-    const web3 = new Web3(WEALIZE_NODE_IP)
+    const web3 = new Web3(NODE_IP)
 
     return transactionFactory.credentialRegistry.addSubjectCredential(
       web3,
@@ -23,7 +23,7 @@ export default class TransactionService {
     psmHash: string,
     url: string
   ): Transaction {
-    const web3 = new Web3(WEALIZE_NODE_IP)
+    const web3 = new Web3(NODE_IP)
 
     return transactionFactory.presentationRegistry.addSubjectPresentation(
       web3,
@@ -35,8 +35,8 @@ export default class TransactionService {
   public static updateSubjectPresentation(
     presentationPmHash: string,
     status: number
-  ) {
-    const web3 = new Web3(WEALIZE_NODE_IP)
+  ): Transaction {
+    const web3 = new Web3(NODE_IP)
 
     return transactionFactory.presentationRegistry.updateSubjectPresentation(
       web3,
@@ -50,7 +50,7 @@ export default class TransactionService {
   }
 
   public static async sendTransactions(transactions: Transaction[]) {
-    const web3 = new Web3(WEALIZE_NODE_IP)
+    const web3 = new Web3(NODE_IP)
     const userPrivateKey = await getPrivateKey()
     const userWalletAddress = await getWalletAddress()
 

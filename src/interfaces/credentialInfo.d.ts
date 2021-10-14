@@ -1,4 +1,6 @@
 /* eslint-disable camelcase */
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
+
 export interface CredentialInfo {
   header: {
     alg: string
@@ -10,23 +12,25 @@ export interface CredentialInfo {
 export interface CredentialInfoPayload {
   iat: number
   iss: string
-  vc: {
-    type: string[]
-    '@context': string[]
-    credentialSubject: CredentialSubjectData
-  }
+  vc: VerifiableCredential
+}
+
+export interface VerifiableCredential {
+  type: string[]
+  '@context': string[]
+  credentialSubject: CredentialSubjectData
 }
 
 export interface CredentialSubjectData {
-  victimInfo: CredentialVictimInfo
+  subjectInfo: CredentialSubjectInfo
 }
 
-export interface CredentialVictimInfo {
+export interface CredentialSubjectInfo {
   info_type: string
   file_type?: string
 }
 
-export interface CredentialNieVictimInfo extends CredentialVictimInfo {
+export interface CredentialNieSubjectInfo extends CredentialSubjectInfo {
   gender: string
   birthDate: string
   givenName: string
@@ -35,55 +39,7 @@ export interface CredentialNieVictimInfo extends CredentialVictimInfo {
   name: string
 }
 
-export interface CredentialCensusVictimInfo extends CredentialVictimInfo {
-  nie: string
-  sex: string
-  name: string
-  town: string
-  address: CredentiaInfoIdentifier
-  section: string
-  district: string
-  birthdate: string
-  last_name: string
-  birthplace: string
-  order_number: string
-  padronal_sheet: string
-  singular_entity: string
-  inscription_date: string
-  province_of_birth: string
-  nucleus_disseminated: string
-  country_of_nationality: string
-}
-
-export interface InternationalProtectionRequestStateInfo
-  extends CredentialVictimInfo {
-  record_number: string
-  name: string
-  last_name: string
-  request_reason: string
-  state_certifier: string
-  request_date: string
-  transaction_state: string
-}
-
-export interface InternationalProtectionRecognitionCertificate
-  extends CredentialVictimInfo {
-  record_number: string
-  name: string
-  last_name: string
-  request_formalization_date: string
-  birthdate: string
-  filiation: string
-  birthplace: string
-  birthcountry: string
-  certificate_certifier: string
-  asylum_recognition_date: string
-  resolution_notification_date: string
-  validity: string
-  legal_basis: string
-}
-
-export interface CredentialGenericVictimInfo extends CredentialVictimInfo {
+export interface CredentialGenericSubjectInfo extends CredentialSubjectInfo {
   document: string
 }
 
@@ -113,3 +69,6 @@ export interface CredentialRequested {
   credential: CredentialInfo
   required: boolean
 }
+
+export interface FoundRequestedCredentials
+  extends Omit<CredentialRequested, 'credential'> {}

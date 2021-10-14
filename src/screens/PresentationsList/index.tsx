@@ -406,13 +406,13 @@ const PresentationsList = () => {
         </TextInfo>
         <TextInfo>
           <FieldName>{PRESENTATION_LIST.INFO}</FieldName>
-          {parseVaccineCredentialsNames(presentation.credentialNames)}
+          {parseCredentialsNames(presentation.credentialNames)}
         </TextInfo>
       </ContainerSyled>
     )
   }
 
-  const parseVaccineCredentialsNames = (credentialNames: string[]) => {
+  const parseCredentialsNames = (credentialNames: string[]) => {
     return credentialNames.map(
       (credentialName) => `${'\n'}${showTypePrText(credentialName)}`
     )

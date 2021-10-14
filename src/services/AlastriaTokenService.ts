@@ -1,5 +1,5 @@
 import Web3 from 'web3'
-import { WEALIZE_NODE_IP } from '@env'
+import { NODE_IP } from '@env'
 import {
   tokensFactory,
   transactionFactory,
@@ -17,7 +17,7 @@ export default class AlastriaTokenService extends JwtService {
   }
 
   public static async createAlastriaAIC(jwt: string): Promise<string> {
-    const web3 = new Web3(WEALIZE_NODE_IP)
+    const web3 = new Web3(NODE_IP)
     const userPrivateKey = await getPrivateKey()
     const userWalletAddress = await getWalletAddress()
 

@@ -3,6 +3,8 @@ import { Menu, renderers } from 'react-native-popup-menu'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import styled from 'styled-components'
 
+import { Colors } from '../../utils/themes'
+
 export const MenuStyled = styled(Menu).attrs({
   renderer: renderers.Popover,
   rendererProps: { placement: 'bottom' }
@@ -16,7 +18,8 @@ export const TriggerViewStyled = styled(View)`
 `
 
 export const TriggerViewIconStyled = styled(Icon)`
-  font-size: 16;
+  font-size: 16px;
+  color: ${Colors.activeInput};
 `
 
 export const MenuTriggerStyle = {

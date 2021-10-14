@@ -1,5 +1,5 @@
 import { tokensFactory, transactionFactory } from 'alastria-identity-lib'
-import { WEALIZE_NODE_IP } from '@env'
+import { NODE_IP } from '@env'
 import Web3 from 'web3'
 
 import { CredentialRepository } from '../data/CredentialRepository'
@@ -7,11 +7,13 @@ import {
   CredentialData,
   CredentialInfo,
   CredentialRequest,
-  CredentialRequested
+  CredentialRequested,
+  FoundRequestedCredentials
 } from '../interfaces/credentialInfo'
 import PsmHashService from './PsmHashService'
 import { CREDENTIAL_STATUS } from '../constants/text'
 import { CredentialStatus } from '../interfaces/credentialStatus'
+import TransactionService from './TransactionService'
 
 const CREDENTIAL_VALID_STATUS = 0
 
@@ -51,9 +53,8 @@ class CredentialsService {
     if (credentials.length > 0) {
       decodedCredentials = credentials.map(
         (validCredential): CredentialInfo => {
-          const decodedValidCred: CredentialInfo = this.decodeJWT(
-            validCredential
-          )
+          const decodedValidCred: CredentialInfo =
+            this.decodeJWT(validCredential)
           return decodedValidCred
         }
       )
@@ -81,7 +82,7 @@ class CredentialsService {
   private static async findRequestedCredentials(
     credentials: CredentialInfo[],
     credentialsRequest: CredentialRequest[]
-  ) {
+  ): Promise<FoundRequestedCredentials[]> {
     return credentialsRequest
       .map((credentialRequest) => {
         const index = credentials.findIndex(
@@ -97,21 +98,25 @@ class CredentialsService {
 
   public static getCredentialType(credential: CredentialInfo) {
     return (
-      credential.payload.vc.credentialSubject.victimInfo.file_type ||
-      credential.payload.vc.credentialSubject.victimInfo.info_type
+      credential.payload.vc.credentialSubject.subjectInfo.file_type ||
+      credential.payload.vc.credentialSubject.subjectInfo.info_type
     )
   }
 
   public static async getCredentialStatus(
     credential: CredentialData
   ): Promise<string> {
-    const web3 = new Web3(WEALIZE_NODE_IP)
-    const psmHash = await PsmHashService.generateCredentialPsmHash(credential.data, credential.issuerDid)
-    const issuerCredentialTransaction = transactionFactory.credentialRegistry.getIssuerCredentialStatus(
-      web3,
-      credential.issuerDid,
-      psmHash
+    const web3 = new Web3(NODE_IP)
+    const psmHash = await PsmHashService.generateCredentialPsmHash(
+      credential.data,
+      credential.issuerDid
     )
+    const issuerCredentialTransaction =
+      transactionFactory.credentialRegistry.getIssuerCredentialStatus(
+        web3,
+        credential.issuerDid,
+        psmHash
+      )
 
     return await web3.eth
       .call(issuerCredentialTransaction)
@@ -137,7 +142,7 @@ class CredentialsService {
   ): string {
     let credentialStatusParsed: string
     if (credentialStatus.exists) {
-      if ( parseInt(credentialStatus.status) === CREDENTIAL_VALID_STATUS) {
+      if (parseInt(credentialStatus.status) === CREDENTIAL_VALID_STATUS) {
         credentialStatusParsed = CREDENTIAL_STATUS.VALID
       } else {
         credentialStatusParsed = CREDENTIAL_STATUS.REVOKED
@@ -147,6 +152,20 @@ class CredentialsService {
     }
 
     return credentialStatusParsed
+  }
+
+  public static async registerInBlockchain(credentials: string[]) {
+    const transactions = await Promise.all(
+      credentials.map(async (credential: string) => {
+        const credentialHash = await PsmHashService.generate(credential)
+        // Is not clear what URI the smart contract expect
+        return TransactionService.addSubjectCredential(
+          credentialHash,
+          'https://wealize.digital'
+        )
+      })
+    )
+    await TransactionService.sendTransactions(transactions)
   }
 }
 

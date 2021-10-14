@@ -2,7 +2,7 @@
 
 exports[`OnboardginComponent should render correctly 1`] = `
 <View
-  className="sc-dlfnbm sc-hKgILt jnGMzt cmlnri"
+  className="sc-hKwDye sc-eCImPb iUezHU kACxek"
 >
   <View
     style={
@@ -83,7 +83,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
                 style={
                   Array [
                     Object {
-                      "color": "#00b0ff",
+                      "color": "#f06078",
                       "fontSize": 20,
                     },
                     Object {
@@ -107,7 +107,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
         <Text
           style={
             Object {
-              "color": "#00b0ff",
+              "color": "#f06078",
               "fontFamily": "SourceSansPro",
               "fontSize": 14,
               "paddingVertical": 1,
@@ -121,27 +121,27 @@ exports[`OnboardginComponent should render correctly 1`] = `
     </View>
   </View>
   <Text
-    className="sc-jSgupP iwKRKM"
+    className="sc-gKclnd ehjlSN"
   >
     Recuperar acceso
   </Text>
   <Text
-    className="sc-gKsewC jypujw"
+    className="sc-iCfMLu gAUWrl"
   >
     Para volver a acceder a tu aplicación debes introduccir tu frase de seguridad y crear un pin de acceso nuevo. 
   </Text>
   <View
-    className="sc-iBPRYJ cvZzWV"
+    className="sc-furwcr fusZvn"
   >
     <TextInput
       allowFontScaling={true}
-      className="sc-fubCfw kOzxBg"
+      className="sc-pVTFL hGbKnM"
       multiline={true}
       onChangeText={[Function]}
       placeholder="Frase de Seguridad"
       placeholderTextColor="rgba(60, 60, 67, 0.29)"
       rejectResponderTermination={true}
-      selectionColor="#00b0ff"
+      selectionColor="#f06078"
       underlineColorAndroid="transparent"
       value=""
     />
@@ -170,14 +170,14 @@ exports[`OnboardginComponent should render correctly 1`] = `
       >
         <TextInput
           allowFontScaling={true}
-          className="sc-pFZIQ"
+          className="sc-jrQzAO"
           editable={true}
           keyboardType="decimal-pad"
           onChangeText={[Function]}
           placeholder="Nuevo Pin"
           placeholderTextColor="#86939e"
           rejectResponderTermination={true}
-          selectionColor="#00b0ff"
+          selectionColor="#f06078"
           style={
             Object {
               "color": "#242424",
@@ -226,14 +226,14 @@ exports[`OnboardginComponent should render correctly 1`] = `
       >
         <TextInput
           allowFontScaling={true}
-          className="sc-pFZIQ"
+          className="sc-jrQzAO"
           editable={true}
           keyboardType="decimal-pad"
           onChangeText={[Function]}
           placeholder="Repetir Pin"
           placeholderTextColor="#86939e"
           rejectResponderTermination={true}
-          selectionColor="#00b0ff"
+          selectionColor="#f06078"
           style={
             Object {
               "color": "#242424",
@@ -261,7 +261,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
     </View>
   </View>
   <View
-    className="sc-jrAGrp bjyEJH"
+    className="sc-kDTinF llURlm"
   >
     <View
       style={

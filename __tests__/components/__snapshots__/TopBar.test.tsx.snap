@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OnboardginComponent should render correctly TopBar with Props 1`] = `
+<View
+  className="sc-bdvvtL dsCBrT"
+>
+  <View
+    backgroundColor="blue"
+    className="sc-gsDKAQ cSNslz"
+  >
+    <Text
+      className="sc-dkPtRN jPLPTV"
+      textColor="red"
+    >
+      title
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`OnboardginComponent should render correctly TopBar without Props 1`] = `
+<View
+  className="sc-bdvvtL dsCBrT"
+>
+  <View
+    backgroundColor="#242424"
+    className="sc-gsDKAQ caUOvk"
+  >
+    <Text
+      className="sc-dkPtRN fUICQl"
+      textColor="#ffffff"
+    >
+      title
+    </Text>
+  </View>
+</View>
+`;

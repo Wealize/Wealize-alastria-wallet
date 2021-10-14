@@ -15,7 +15,8 @@ import {
   TermsCheckBox,
   InputStyled,
   TermsText,
-  SplashActivityIndicator
+  SplashActivityIndicator,
+  CheckBoxContainer
 } from './styles'
 import { REGISTER } from '../../constants/text'
 import { Colors } from '../../utils/themes'
@@ -79,23 +80,24 @@ const Register: NavigationFunctionComponent = ({
           placeholder={REGISTER.SECOND_PIN}
           errorMessage={renderErrorMessage()}
         />
-        <TermsCheckBox
-          title={
-            <TermsText
-              onPress={() =>
-                setStackRoot(componentId, SCREEN.TERMS_AND_CONDITIONS, {
-                  lastComponent: SCREEN.REGISTER
-                })
-              }
-            >
-              {REGISTER.CONDITIONS}
-            </TermsText>
-          }
-          checked={isTermsCheckboxChecked}
-          onPress={() => {
-            setIsTermsCheckboxChecked(!isTermsCheckboxChecked)
-          }}
-        />
+
+        <CheckBoxContainer>
+          <TermsCheckBox
+            checked={isTermsCheckboxChecked}
+            onPress={() => {
+              setIsTermsCheckboxChecked(!isTermsCheckboxChecked)
+            }}
+          />
+          <TermsText
+            onPress={() =>
+              setStackRoot(componentId, SCREEN.TERMS_AND_CONDITIONS, {
+                lastComponent: SCREEN.REGISTER
+              })
+            }
+          >
+            {REGISTER.CONDITIONS}
+          </TermsText>
+        </CheckBoxContainer>
       </InputsContainer>
 
       <ContainerBottom>

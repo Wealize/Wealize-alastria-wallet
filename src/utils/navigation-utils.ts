@@ -34,6 +34,11 @@ export const initStackWithScreen = (screenName: string, options?: object) => {
         bottomTabs: {
           options: {
             bottomTabs: {
+              shadow: {
+                opacity: 0.2,
+                color: 'lightgrey',
+                radius: 3
+              },
               titleDisplayMode: 'alwaysShow',
               tabsAttachMode: 'afterInitialTab',
               preferLargeIcons: true,

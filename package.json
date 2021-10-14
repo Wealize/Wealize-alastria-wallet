@@ -1,7 +1,7 @@
 {
   "name": "alastria-wallet",
   "version": "1.0.0",
-  "description": "Wallet app for pacient vaccines",
+  "description": "Wallet app",
   "repository": "git@github.com:Wealize/alastria-wallet.git",
   "author": "Wealize",
   "license": "MIT",
@@ -97,6 +97,7 @@
     "@babel/plugin-proposal-decorators": "^7.13.5",
     "@babel/runtime": "^7.8.4",
     "@react-native-community/eslint-config": "^1.1.0",
+    "@testing-library/react-native": "^7.2.0",
     "@types/jest": "^25.2.3",
     "@types/node": "^14.14.31",
     "@types/react-native": "^0.63.2",
@@ -133,7 +134,12 @@
       "jsx",
       "json",
       "node"
-    ]
+    ],
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/assets/"
+    ],
+    "clearMocks": true
   },
   "react-native": {
     "zlib": "browserify-zlib",

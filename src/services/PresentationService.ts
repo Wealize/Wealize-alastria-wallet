@@ -1,11 +1,12 @@
 import Web3 from 'web3'
-import { WEALIZE_NODE_IP } from '@env'
+import { NODE_IP } from '@env'
 import { tokensFactory, transactionFactory } from 'alastria-identity-lib'
 import { v4 as uuid4 } from 'uuid'
 
 import {
   PresentationRequest,
-  PresentationRequestPayload
+  PresentationRequestPayload,
+  PresetationResolve
 } from '../interfaces/presentationRequest'
 import { getDid, getPrivateKey } from '../utils/keychain'
 import ApiClient from './ApiClient'
@@ -33,11 +34,12 @@ export default class PresentationService {
   public static async getPublicKeyFromDid(
     decodedJWT: PresentationRequest
   ): Promise<string> {
-    const web3 = new Web3(WEALIZE_NODE_IP)
-    const currentPubKey = transactionFactory.publicKeyRegistry.getCurrentPublicKey(
-      web3,
-      decodedJWT.payload.iss
-    )
+    const web3 = new Web3(NODE_IP)
+    const currentPubKey =
+      transactionFactory.publicKeyRegistry.getCurrentPublicKey(
+        web3,
+        decodedJWT.payload.iss
+      )
 
     return await web3.eth
       .call(currentPubKey)
@@ -58,7 +60,7 @@ export default class PresentationService {
   public static async createPresentation(
     presentationRequest: PresentationRequestPayload,
     credentials: string[]
-  ): Promise<{ presentationJwt: string; presentationCbu: string }> {
+  ): Promise<PresetationResolve> {
     const userDid = await getDid()
     const userPrivateKey = await getPrivateKey()
     let presentationJwt: string = ''
@@ -95,12 +97,14 @@ export default class PresentationService {
     presentationCbu: string
   ) {
     const presentation = this.decodePresentation(presentationJwt)
-    const serviceProviderData = await AlastriaIdentityService.getEntityDataFromDid(
-      presentation.payload.aud
-    )
-    const credentialNames = CredentialsService.getInformationTypeFromCredentials(
-      presentation.payload.vp.verifiableCredential
-    )
+    const serviceProviderData =
+      await AlastriaIdentityService.getEntityDataFromDid(
+        presentation.payload.aud
+      )
+    const credentialNames =
+      CredentialsService.getInformationTypeFromCredentials(
+        presentation.payload.vp.verifiableCredential
+      )
 
     const parsedPresentation = {
       psmHash: await PsmHashService.generate(presentationJwt),
