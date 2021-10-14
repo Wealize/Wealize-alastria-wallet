@@ -21,13 +21,16 @@ export const setKeychainDataObject = async (
   ).catch(() => null)
 }
 
-export const saveDID = async (did: string) => {
+export const saveDID = async (did: string): Promise<boolean> => {
   const keychainObject = await getKeychainDataObject()
-  if (keychainObject) {
-    keychainObject.did = did
-    await setKeychainDataObject(keychainObject)
-    await LocalStorageService.storeBool(STORAGE_KEYS.IS_DID_CREATED, true)
+  if (!keychainObject || !did) {
+    return false
   }
+
+  keychainObject.did = did
+  await setKeychainDataObject(keychainObject)
+  await LocalStorageService.storeBool(STORAGE_KEYS.IS_DID_CREATED, true)
+  return true
 }
 
 export const getKeychainDataObject = async (): Promise<KeyChainData | null> => {
