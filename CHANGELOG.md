@@ -5,4 +5,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
--
+- [[Wallet] Añadir test al wallet](https://wealize.atlassian.net/browse/AL-44)
