@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OnboardginComponent should render correctly TopBar with Props 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    className="sc-bdfBwQ lmbRAz"
+    style={
+      Object {
+        "backgroundColor": "blue",
+      }
+    }
+  >
+    <Text
+      className="sc-gsTCUz doOdXv"
+      style={
+        Object {
+          "color": "red",
+        }
+      }
+    >
+      title
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`OnboardginComponent should render correctly TopBar without Props 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    className="sc-bdfBwQ lmbRAz"
+    style={
+      Object {
+        "backgroundColor": "#002b6a",
+      }
+    }
+  >
+    <Text
+      className="sc-gsTCUz doOdXv"
+      style={
+        Object {
+          "color": "#ffffff",
+        }
+      }
+    >
+      title
+    </Text>
+  </View>
+</View>
+`;
