@@ -2,15 +2,15 @@
 
 exports[`OnboardginComponent should render correctly 1`] = `
 <View
-  className="sc-bdfBwQ ifZCYK"
+  className="sc-bdfBQB gVCLlm"
 >
   <Text
-    className="sc-dlfnbm fQndrk"
+    className="sc-dlfnuX EPvML"
   >
     Frase de seguridad
   </Text>
   <Text
-    className="sc-hKgILt ikmTPr"
+    className="sc-hKgJUU tfOQh"
   >
     Esta frase de seguridad permite recuperar tu cuenta en caso de que olvides el acceso. Recomendamos que la memorices o copies en un lugar seguro. Puedes consultarla siempre que lo necesites tras iniciar sesión. Por seguridad, nunca la reveles a otra persona.
   </Text>
@@ -33,7 +33,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
     <TextInput
       allowFontScaling={true}
       caretHidden={true}
-      className="sc-iBPRYJ hGdVlI"
+      className="sc-iBPTik dslGxm"
       editable={false}
       multiline={true}
       onChangeText={[Function]}
@@ -47,7 +47,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
     >
       <Image
         blurRadius={10}
-        className="sc-jSgupP cayINm"
+        className="sc-jSgvzq jwkIeb"
         source={
           Object {
             "testUri": "../../../src/assets/img/background-grey.png",
@@ -73,14 +73,14 @@ exports[`OnboardginComponent should render correctly 1`] = `
         }
       />
       <Text
-        className="sc-gKsewC bBuTnQ"
+        className="sc-gKseQn hIXEBy"
       >
         Pulse aquí para revelar su frase de seguridad
       </Text>
     </View>
   </View>
   <View
-    className="sc-gsTCUz kyMDVX"
+    className="sc-gsTEea SjcFv"
   >
     <View
       style={
