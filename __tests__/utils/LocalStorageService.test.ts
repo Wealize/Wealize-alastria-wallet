@@ -31,30 +31,4 @@ describe('LocalStorageService', () => {
     expect(isStoredBoolData).toBeFalsy()
   })
 
-  it('should return empty array when not obtaining AssociatedCenters', async () => {
-    const isInstitutionData = await LocalStorageService.getAssociatedCenters()
-
-    expect(isInstitutionData).toEqual([])
-  })
-
-  it('should store and get AssociatedCenters', async () => {
-    const institutionData = [
-      {
-        id: '1',
-        name: 'one'
-      },
-      {
-        id: '2',
-        name: 'two'
-      }
-    ]
-
-    await LocalStorageService.storeAssociatedCenters(
-      STORAGE_KEYS.ASSOCIATED_CENTERS,
-      institutionData
-    )
-    const isInstitutionData = await LocalStorageService.getAssociatedCenters()
-
-    expect(isInstitutionData).toEqual(institutionData)
-  })
 })

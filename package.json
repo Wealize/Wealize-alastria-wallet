@@ -1,7 +1,7 @@
 {
   "name": "alastria-wallet",
   "version": "1.0.0",
-  "description": "Wallet app for pacient vaccines",
+  "description": "Wallet app",
   "repository": "git@github.com:Wealize/alastria-wallet.git",
   "author": "Wealize",
   "license": "MIT",

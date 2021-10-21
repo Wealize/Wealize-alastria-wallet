@@ -5,10 +5,7 @@ import {
   CredentialVictimInfo,
   CredentialData,
   CredentialNieVictimInfo,
-  CredentialCensusVictimInfo,
-  CredentialGenericVictimInfo,
-  InternationalProtectionRequestStateInfo,
-  InternationalProtectionRecognitionCertificate
+  CredentialGenericVictimInfo
 } from '../interfaces/credentialInfo'
 import { numericDateToTime } from '../utils/dateParser'
 import { DocumentLink } from './styles/CredentialContainer.styles'
@@ -36,13 +33,6 @@ export const RenderInfoContent = ({
 }): JSX.Element => {
   const VICTIM_INFO = {
     nie_copy: renderNie(credential),
-    census_copy: renderCensus(credential),
-    international_protection_request_state: renderInternationalProtectionRequestState(
-      credential
-    ),
-    international_protection_recognition_certificate: renderInternationalProtectionRecognitionCertificate(
-      credential
-    ),
     generic: renderGeneric(credential, componentId)
   }
   const VICTIM_DEFAULT_INFO = renderDefault(credential)
@@ -65,47 +55,6 @@ const renderVictimInfo = (
 const renderNie = (credential: CredentialData) => {
   const victimNieInfo: CredentialNieVictimInfo = dataStringToJson(credential)
   return <NieContent credential={credential} nieInfo={victimNieInfo} />
-}
-
-const renderCensus = (credential: CredentialData) => {
-  const victimCensusInfo: CredentialCensusVictimInfo = dataStringToJson(
-    credential
-  )
-  return <CensusContent credential={credential} censusInfo={victimCensusInfo} />
-}
-
-const renderInternationalProtectionRequestState = (
-  credential: CredentialData
-) => {
-  const victimInternationalProtectionRequestStateContent: InternationalProtectionRequestStateInfo = dataStringToJson(
-    credential
-  )
-
-  return (
-    <InternationalProtectionRequestStateContent
-      credential={credential}
-      internationalProtectionRequestStateInfo={
-        victimInternationalProtectionRequestStateContent
-      }
-    />
-  )
-}
-
-const renderInternationalProtectionRecognitionCertificate = (
-  credential: CredentialData
-) => {
-  const victimInternationalProtectionRecognitionCertificateContent: InternationalProtectionRecognitionCertificate = dataStringToJson(
-    credential
-  )
-
-  return (
-    <InternationalProtectionRecognitionCertificateContent
-      credential={credential}
-      internationalProtectionRecognitionCertificateInfo={
-        victimInternationalProtectionRecognitionCertificateContent
-      }
-    />
-  )
 }
 
 const renderGeneric = (credential: CredentialData, componentId: string) => {
@@ -166,177 +115,6 @@ const NieContent = ({
       <TextInfo>
         <FieldName>{CREDENTIAL_DESCRIPTION.NIE} </FieldName>
         {nieInfo.identifier.value}
-      </TextInfo>
-    </ContainerSyled>
-  )
-}
-
-const CensusContent = ({
-  credential,
-  censusInfo
-}: {
-  credential: CredentialData
-  censusInfo: CredentialCensusVictimInfo
-}): JSX.Element => {
-  return (
-    <ContainerSyled>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.STATUS} </FieldName>
-        {credential.status}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.ORGANIZATION} </FieldName>
-        {censusInfo.singular_entity}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.DATE} </FieldName>{' '}
-        {showDate(credential.created)}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.TOWN} </FieldName>
-        {CREDENTIAL_DESCRIPTION.TOWN_DESCRIPTION} {censusInfo.town}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.ADDRESS} </FieldName>
-        {censusInfo.address}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.NUCLEUS} </FieldName>
-        {censusInfo.nucleus_disseminated}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.ISSUER} </FieldName>
-        {credential.issuerName}
-      </TextInfo>
-    </ContainerSyled>
-  )
-}
-
-const InternationalProtectionRequestStateContent = ({
-  credential,
-  internationalProtectionRequestStateInfo
-}: {
-  credential: CredentialData
-  internationalProtectionRequestStateInfo: InternationalProtectionRequestStateInfo
-}): JSX.Element => {
-  return (
-    <ContainerSyled>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.STATUS} </FieldName>
-        {credential.status}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.RECORD_NUMBER} </FieldName>
-        {internationalProtectionRequestStateInfo.record_number}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.NAME} </FieldName>
-        {internationalProtectionRequestStateInfo.name}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.LAST_NAME} </FieldName>
-        {internationalProtectionRequestStateInfo.last_name}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.REQUEST_REASON} </FieldName>
-        {internationalProtectionRequestStateInfo.request_reason}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.STATE_CERTIFIER} </FieldName>
-        {internationalProtectionRequestStateInfo.state_certifier}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.REQUEST_DATE} </FieldName>
-        {showDate(internationalProtectionRequestStateInfo.request_date)}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.TRANSACTION_STATE} </FieldName>
-        {internationalProtectionRequestStateInfo.transaction_state}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.ISSUER} </FieldName>
-        {credential.issuerName}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.DATE} </FieldName>{' '}
-        {showDate(credential.created)}
-      </TextInfo>
-    </ContainerSyled>
-  )
-}
-
-const InternationalProtectionRecognitionCertificateContent = ({
-  credential,
-  internationalProtectionRecognitionCertificateInfo
-}: {
-  credential: CredentialData
-  internationalProtectionRecognitionCertificateInfo: InternationalProtectionRecognitionCertificate
-}): JSX.Element => {
-  return (
-    <ContainerSyled>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.STATUS} </FieldName>
-        {credential.status}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.RECORD_NUMBER} </FieldName>
-        {internationalProtectionRecognitionCertificateInfo.record_number}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.NAME} </FieldName>
-        {internationalProtectionRecognitionCertificateInfo.name}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.LAST_NAME} </FieldName>
-        {internationalProtectionRecognitionCertificateInfo.last_name}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.REQUEST_FORMALIZATION_DATE} </FieldName>
-        {showDate(internationalProtectionRecognitionCertificateInfo.request_formalization_date)}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.BIRTHDATE} </FieldName>
-        {showDate(internationalProtectionRecognitionCertificateInfo.birthdate)}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.FILIATION} </FieldName>
-        {internationalProtectionRecognitionCertificateInfo.filiation}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.BIRTHPLACE} </FieldName>
-        {internationalProtectionRecognitionCertificateInfo.birthplace}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.BIRTHCOUNTRY} </FieldName>
-        {internationalProtectionRecognitionCertificateInfo.birthcountry}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.CERTIFICATE_CERTIFIER} </FieldName>
-        {internationalProtectionRecognitionCertificateInfo.certificate_certifier}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.ASYLUM_RECOGNITION_DATE} </FieldName>
-        {showDate(internationalProtectionRecognitionCertificateInfo.asylum_recognition_date)}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.RESOLUTION_NOTIFICATION_DATE} </FieldName>
-        {showDate(internationalProtectionRecognitionCertificateInfo.resolution_notification_date)}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.VALIDITY} </FieldName>
-        {showDate(internationalProtectionRecognitionCertificateInfo.validity)}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.LEGAL_BASIS} </FieldName>
-        {internationalProtectionRecognitionCertificateInfo.legal_basis}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.ISSUER} </FieldName>
-        {credential.issuerName}
-      </TextInfo>
-      <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.DATE} </FieldName>{' '}
-        {showDate(credential.created)}
       </TextInfo>
     </ContainerSyled>
   )
