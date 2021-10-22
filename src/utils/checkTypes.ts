@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { CredentialData, CredentialGenericVictimInfo } from '../interfaces/credentialInfo'
+import { CredentialData, CredentialGenericSubjectInfo } from '../interfaces/credentialInfo'
 
 export const fileCheckType = (documentBase64: string) => {
   const decodeDocument = Buffer.from(documentBase64, 'base64')
@@ -8,7 +8,7 @@ export const fileCheckType = (documentBase64: string) => {
 }
 
 export const checkCredentialType = (data: CredentialData) => {
-  const { file_type }: CredentialGenericVictimInfo = JSON.parse(data.value)
+  const { file_type }: CredentialGenericSubjectInfo = JSON.parse(data.value)
   if (data.key === 'generic' && file_type) return file_type
   return data.key
 }

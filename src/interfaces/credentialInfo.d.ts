@@ -18,15 +18,15 @@ export interface CredentialInfoPayload {
 }
 
 export interface CredentialSubjectData {
-  victimInfo: CredentialVictimInfo
+  victimInfo: CredentialSubjectInfo
 }
 
-export interface CredentialVictimInfo {
+export interface CredentialSubjectInfo {
   info_type: string
   file_type?: string
 }
 
-export interface CredentialNieVictimInfo extends CredentialVictimInfo {
+export interface CredentialNieSubjectInfo extends CredentialSubjectInfo {
   gender: string
   birthDate: string
   givenName: string
@@ -36,7 +36,7 @@ export interface CredentialNieVictimInfo extends CredentialVictimInfo {
 }
 
 
-export interface CredentialGenericVictimInfo extends CredentialVictimInfo {
+export interface CredentialGenericSubjectInfo extends CredentialSubjectInfo {
   document: string
 }
 

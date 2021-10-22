@@ -2,10 +2,10 @@ import React from 'react'
 import moment from 'moment'
 
 import {
-  CredentialVictimInfo,
+  CredentialSubjectInfo,
   CredentialData,
-  CredentialNieVictimInfo,
-  CredentialGenericVictimInfo
+  CredentialNieSubjectInfo,
+  CredentialGenericSubjectInfo
 } from '../interfaces/credentialInfo'
 import { numericDateToTime } from '../utils/dateParser'
 import { DocumentLink } from './styles/CredentialContainer.styles'
@@ -16,7 +16,7 @@ import {
 } from '../styles/ContainerStyles.styles'
 import { dataStringToJson } from '../utils/jsonParser'
 import { CREDENTIAL_DESCRIPTION } from '../constants/text'
-import { VictimInfo } from '../interfaces/InfoTypes'
+import { SubjectInfo } from '../interfaces/InfoTypes'
 import { pushScreen } from '../utils/navigation-utils'
 import { fileCheckType } from '../utils/checkTypes'
 import { DAY_MONTH_YEAR } from '../constants/formats'
@@ -31,51 +31,51 @@ export const RenderInfoContent = ({
   componentId: string
   credential: CredentialData
 }): JSX.Element => {
-  const VICTIM_INFO = {
+  const SUBJECT_INFO = {
     nie_copy: renderNie(credential),
     generic: renderGeneric(credential, componentId)
   }
-  const VICTIM_DEFAULT_INFO = renderDefault(credential)
+  const SUBJECT_DEFAULT_INFO = renderDefault(credential)
 
-  return renderVictimInfo(credential, VICTIM_INFO, VICTIM_DEFAULT_INFO)
+  return renderSubjectInfo(credential, SUBJECT_INFO, SUBJECT_DEFAULT_INFO)
 }
 
-const renderVictimInfo = (
+const renderSubjectInfo = (
   credential: CredentialData,
-  victim: VictimInfo,
+  subject: SubjectInfo,
   defaultInfo: JSX.Element
 ) => {
-  const credentialInfo: CredentialVictimInfo = dataStringToJson(credential)
-  const victimInfo =
-    victim[credentialInfo.info_type as keyof VictimInfo] || defaultInfo
+  const credentialInfo: CredentialSubjectInfo = dataStringToJson(credential)
+  const subjectInfo =
+    subject[credentialInfo.info_type as keyof SubjectInfo] || defaultInfo
 
-  return victimInfo
+  return subjectInfo
 }
 
 const renderNie = (credential: CredentialData) => {
-  const victimNieInfo: CredentialNieVictimInfo = dataStringToJson(credential)
-  return <NieContent credential={credential} nieInfo={victimNieInfo} />
+  const subjectNieInfo: CredentialNieSubjectInfo = dataStringToJson(credential)
+  return <NieContent credential={credential} nieInfo={subjectNieInfo} />
 }
 
 const renderGeneric = (credential: CredentialData, componentId: string) => {
-  const victimGenericInfo: CredentialGenericVictimInfo = dataStringToJson(
+  const subjectGenericInfo: CredentialGenericSubjectInfo = dataStringToJson(
     credential
   )
   return (
     <GenericContent
       credential={credential}
-      genericInfo={victimGenericInfo}
+      genericInfo={subjectGenericInfo}
       componentId={componentId}
     />
   )
 }
 
 const renderDefault = (credential: CredentialData) => {
-  const victimGenericInfo: CredentialGenericVictimInfo = dataStringToJson(
+  const subjectGenericInfo: CredentialGenericSubjectInfo = dataStringToJson(
     credential
   )
   return (
-    <DefaultContent credential={credential} genericInfo={victimGenericInfo} />
+    <DefaultContent credential={credential} genericInfo={subjectGenericInfo} />
   )
 }
 
@@ -84,7 +84,7 @@ const NieContent = ({
   nieInfo
 }: {
   credential: CredentialData
-  nieInfo: CredentialNieVictimInfo
+  nieInfo: CredentialNieSubjectInfo
 }): JSX.Element => {
   return (
     <ContainerSyled>
@@ -127,7 +127,7 @@ const GenericContent = ({
 }: {
   componentId: string
   credential: CredentialData
-  genericInfo: CredentialGenericVictimInfo
+  genericInfo: CredentialGenericSubjectInfo
 }): JSX.Element => {
   return (
     <ContainerSyled>
@@ -166,7 +166,7 @@ const DefaultContent = ({
   genericInfo
 }: {
   credential: CredentialData
-  genericInfo: CredentialGenericVictimInfo
+  genericInfo: CredentialGenericSubjectInfo
 }): JSX.Element => {
   return (
     <ContainerSyled>

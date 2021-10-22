@@ -1,6 +1,4 @@
-import LocalStorageService, {
-  STORAGE_KEYS
-} from '../../src/services/LocalStorageService'
+import LocalStorageService from '../../src/services/LocalStorageService'
 
 describe('LocalStorageService', () => {
   it('should store and get data', async () => {

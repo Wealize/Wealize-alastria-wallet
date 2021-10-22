@@ -9,7 +9,7 @@ export interface FileTypes {
   passaport?: string
 }
 
-export interface VictimInfo {
+export interface SubjectInfo {
   nie_copy: JSX.Element
   generic: JSX.Element
 }
