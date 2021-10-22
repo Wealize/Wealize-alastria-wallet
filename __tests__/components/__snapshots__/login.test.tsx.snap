@@ -2,7 +2,7 @@
 
 exports[`OnboardginComponent should render correctly 1`] = `
 <View
-  className="sc-bdfBwQ sc-gsTCUz ifZCYK PmSxj"
+  className="sc-bdfBQB sc-gsTEea gVCLlm kiXAvv"
 >
   <View
     style={
@@ -120,12 +120,12 @@ exports[`OnboardginComponent should render correctly 1`] = `
     </View>
   </View>
   <Text
-    className="sc-hKgILt ijygG"
+    className="sc-hKgJUU kuCnVg"
   >
     Inicio de sesión
   </Text>
   <View
-    className="sc-eCssSg gnYqIE"
+    className="sc-eCstlR kEBkFE"
   >
     <View
       style={
@@ -152,7 +152,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
       >
         <TextInput
           allowFontScaling={true}
-          className="sc-jSgupP"
+          className="sc-jSgvzq"
           editable={true}
           keyboardType="decimal-pad"
           onChangeText={[Function]}
@@ -185,7 +185,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
     </View>
   </View>
   <View
-    className="sc-gKsewC hvQrOF"
+    className="sc-gKseQn divphj"
   >
     <View
       style={
