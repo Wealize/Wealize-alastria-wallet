@@ -1,7 +1,7 @@
 import { DEFAULT_ACTION, HISTORIC_TYPES } from '../constants/actionTypes'
 import { FILTER_HISTORIC } from '../constants/filters'
 import { DEFAULT_TYPE, FILE_TYPES, INFO_TYPES } from '../constants/infoTypes'
-import { CredentialVictimInfo } from '../interfaces/credentialInfo'
+import { CredentialSubjectInfo } from '../interfaces/credentialInfo'
 import { HistoricTypes } from '../interfaces/historicTypes'
 import { FileTypes, InfoTypes } from '../interfaces/InfoTypes'
 
@@ -20,7 +20,7 @@ export const showFileTypeText = (fileType: string | undefined): string => {
 }
 
 export const showDocumentFileType = (
-  victimInfo: CredentialVictimInfo
+  victimInfo: CredentialSubjectInfo
 ): string => {
   const { file_type: fileType } = victimInfo
   if (!fileType) return ''

@@ -39,7 +39,7 @@ export class CredentialRepository {
     credentialData: CredentialData
   ): Promise<boolean> {
     const repository = getRepository(Credential)
-    // TODO right now the test API wont return vaccine codes so we need to check the vaccine name instead
+    // TODO right now the test API wont return credential codes so we need to check the credential name instead
     // return (await repository.count({ key: credentialData.key })) > 0
 
     const credentials = await repository.find()

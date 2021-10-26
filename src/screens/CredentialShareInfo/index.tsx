@@ -38,6 +38,7 @@ import { showDocumentFileType, showTypeText } from '../../utils/translateTypes'
 import { HistoricRepository } from '../../data/HistoricRepository'
 import { CREDENTIAL } from '../../constants/actionTypes'
 import { useGlobalState } from '../../context/Actions/ActionContext'
+import { checkNotifications } from 'react-native-permissions'
 
 const CredentialShareInfo = ({
   componentId,
@@ -47,8 +48,8 @@ const CredentialShareInfo = ({
   const [dataCredentials] = useGlobalState('dataCredentials')
   const [entityData, setEntityData] = useState<EntityData | null>(null)
   const [isLoading, setIsLoading] = useState(false)
-  const credentialVictimInfo = credentialInfo?.vc.credentialSubject.victimInfo
-  const { info_type: infoType } = credentialVictimInfo || {}
+  const credentialSubjectInfo = credentialInfo?.vc.credentialSubject.victimInfo
+  const { info_type: infoType } = credentialSubjectInfo || {}
 
   useEffect(() => {
     loadEntityData()
@@ -122,7 +123,7 @@ const CredentialShareInfo = ({
       issuerDid: credentialInfo.iss,
       data: jwtData || '',
       key: infoType || '',
-      value: JSON.stringify(credentialVictimInfo),
+      value: JSON.stringify(credentialSubjectInfo),
       created: String(credentialInfo.iat)
     }
   }
@@ -170,8 +171,8 @@ const CredentialShareInfo = ({
               </Subtitle>
               <SubtitleType>
                 {showTypeText(infoType)}{' '}
-                {credentialVictimInfo &&
-                  showDocumentFileType(credentialVictimInfo)}
+                {credentialSubjectInfo &&
+                  showDocumentFileType(credentialSubjectInfo)}
               </SubtitleType>
             </ContainerSubtitle>
 
