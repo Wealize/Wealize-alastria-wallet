@@ -2,7 +2,7 @@
 
 exports[`OnboardginComponent should render correctly 1`] = `
 <View
-  className="sc-gsTEea lcyMyB"
+  className="sc-gsDKAQ cBNnHp"
 >
   <View
     onLayout={[Function]}
@@ -24,7 +24,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
       autoplayDirection={true}
       autoplayTimeout={2.5}
       bounces={false}
-      className="sc-dlfnuX"
+      className="sc-dkPtRN"
       contentContainerStyle={
         Array [
           Object {
@@ -83,7 +83,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
             style={Object {}}
           >
             <Image
-              className="sc-hKgJUU kXhtQk"
+              className="sc-hKwDye jdyLJw"
               source={
                 Object {
                   "testUri": "../../../src/assets/img/onboarding-first-screen.png",
@@ -109,10 +109,10 @@ exports[`OnboardginComponent should render correctly 1`] = `
               }
             />
             <Text
-              className="sc-eCstlR cJeqmM"
+              className="sc-eCImPb gisOel"
             >
               <Image
-                className="sc-gKseQn jVgprL"
+                className="sc-gKclnd gIBqMp"
                 source={
                   Object {
                     "testUri": "../../../src/assets/img/icon-info.png",
@@ -120,28 +120,28 @@ exports[`OnboardginComponent should render correctly 1`] = `
                 }
               />
               <Text
-                className="sc-jSgvzq iCgIlM"
+                className="sc-jRQBWg QdMUG"
               >
                 Más información
               </Text>
             </Text>
             <View
-              className="sc-iBPTik hkBWhy"
+              className="sc-iCfMLu hhXOSJ"
             >
               <Text
-                className="sc-fubCzh hBDdKR"
+                className="sc-furwcr kiInJI"
               >
                 Identfy
               </Text>
               <Text
-                className="sc-pGacB ezXVdE"
+                className="sc-pVTFL fjZCJl"
                 onPress={[Function]}
               >
                 Saltar
               </Text>
             </View>
             <Text
-              className="sc-kEjbQP gTxvZb"
+              className="sc-kDTinF rhxUk"
             >
               La aplicación que te permite guardar de forma segura tu documentación en el móvil.
             </Text>
@@ -165,7 +165,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
             style={Object {}}
           >
             <Image
-              className="sc-hKgJUU kXhtQk"
+              className="sc-hKwDye jdyLJw"
               source={
                 Object {
                   "testUri": "../../../src/assets/img/onboarding-second-screen.png",
@@ -191,10 +191,10 @@ exports[`OnboardginComponent should render correctly 1`] = `
               }
             />
             <Text
-              className="sc-eCstlR cJeqmM"
+              className="sc-eCImPb gisOel"
             >
               <Image
-                className="sc-gKseQn jVgprL"
+                className="sc-gKclnd gIBqMp"
                 source={
                   Object {
                     "testUri": "../../../src/assets/img/icon-info.png",
@@ -202,28 +202,28 @@ exports[`OnboardginComponent should render correctly 1`] = `
                 }
               />
               <Text
-                className="sc-jSgvzq iCgIlM"
+                className="sc-jRQBWg QdMUG"
               >
                 Más información
               </Text>
             </Text>
             <View
-              className="sc-iBPTik hkBWhy"
+              className="sc-iCfMLu hhXOSJ"
             >
               <Text
-                className="sc-fubCzh hBDdKR"
+                className="sc-furwcr kiInJI"
               >
                 Guarda o comparte información
               </Text>
               <Text
-                className="sc-pGacB sc-jrAFXE ezXVdE ksFMZZ"
+                className="sc-pVTFL sc-jrQzAO fjZCJl elCmcQ"
                 onPress={[Function]}
               >
                 Saltar
               </Text>
             </View>
             <Text
-              className="sc-kEjbQP sc-iqHYmW gTxvZb iQNRH"
+              className="sc-kDTinF sc-iqseJM rhxUk dvvcPb"
             >
               Utiliza el escáner de la aplicación para escanear un código QR y guardar la información acreditada que te emitan las organizaciones. Usa el mismo procedimiento cuando una organización te solicite información, y podrás decidir qué información deseas compartir.
             </Text>
@@ -247,7 +247,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
             style={Object {}}
           >
             <Image
-              className="sc-hKgJUU kXhtQk"
+              className="sc-hKwDye jdyLJw"
               source={
                 Object {
                   "testUri": "../../../src/assets/img/onboarding-third-screen.png",
@@ -273,10 +273,10 @@ exports[`OnboardginComponent should render correctly 1`] = `
               }
             />
             <Text
-              className="sc-eCstlR cJeqmM"
+              className="sc-eCImPb gisOel"
             >
               <Image
-                className="sc-gKseQn jVgprL"
+                className="sc-gKclnd gIBqMp"
                 source={
                   Object {
                     "testUri": "../../../src/assets/img/icon-info.png",
@@ -284,23 +284,23 @@ exports[`OnboardginComponent should render correctly 1`] = `
                 }
               />
               <Text
-                className="sc-jSgvzq iCgIlM"
+                className="sc-jRQBWg QdMUG"
               >
                 Más información
               </Text>
             </Text>
             <Text
-              className="sc-fubCzh hBDdKR"
+              className="sc-furwcr kiInJI"
             >
               Revocar información
             </Text>
             <Text
-              className="sc-kEjbQP gTxvZb"
+              className="sc-kDTinF rhxUk"
             >
               En el momento que desees dejar de compartir información con una institución, puedes revocar su acceso desde el listado de accesos. Accede a él desde el menú de navegación inferior.
             </Text>
             <View
-              className="sc-crrszt Chhjb"
+              className="sc-crHmcD kZJmtU"
             >
               <View
                 style={
