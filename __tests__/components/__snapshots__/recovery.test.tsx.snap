@@ -2,7 +2,7 @@
 
 exports[`OnboardginComponent should render correctly 1`] = `
 <View
-  className="sc-dlfnuX sc-hKgJUU euTbpO iRiBIE"
+  className="sc-dkPtRN sc-hKwDye exFiNq JeYzc"
 >
   <View
     style={
@@ -121,21 +121,21 @@ exports[`OnboardginComponent should render correctly 1`] = `
     </View>
   </View>
   <Text
-    className="sc-jSgvzq cHdwbB"
+    className="sc-jRQBWg dxkivX"
   >
     Recuperar acceso
   </Text>
   <Text
-    className="sc-gKseQn gNShDS"
+    className="sc-gKclnd llygRY"
   >
     Para volver a acceder a tu aplicación debes introduccir tu frase de seguridad y crear un pin de acceso nuevo. 
   </Text>
   <View
-    className="sc-iBPTik gURcWP"
+    className="sc-iCfMLu dMJhWo"
   >
     <TextInput
       allowFontScaling={true}
-      className="sc-fubCzh bKmelu"
+      className="sc-furwcr jThTqf"
       multiline={true}
       onChangeText={[Function]}
       placeholder="Frase de Seguridad"
@@ -170,7 +170,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
       >
         <TextInput
           allowFontScaling={true}
-          className="sc-pGacB"
+          className="sc-pVTFL"
           editable={true}
           keyboardType="decimal-pad"
           onChangeText={[Function]}
@@ -226,7 +226,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
       >
         <TextInput
           allowFontScaling={true}
-          className="sc-pGacB"
+          className="sc-pVTFL"
           editable={true}
           keyboardType="decimal-pad"
           onChangeText={[Function]}
@@ -261,7 +261,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
     </View>
   </View>
   <View
-    className="sc-jrAFXE bGAxgA"
+    className="sc-jrQzAO jJueht"
   >
     <View
       style={

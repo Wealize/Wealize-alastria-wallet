@@ -2,20 +2,20 @@
 
 exports[`OnboardginComponent should render correctly 1`] = `
 <View
-  className="sc-bdfBQB sc-gsTEea gVCLlm kiXAvv"
+  className="sc-bdvvtL sc-gsDKAQ jKiuHH gCheCb"
 >
   <Text
-    className="sc-dlfnuX kZXciq"
+    className="sc-dkPtRN hHtZNm"
   >
     Registro
   </Text>
   <Text
-    className="sc-hKgJUU fiPsiI"
+    className="sc-hKwDye kSCOVw"
   >
     Añade seguridad a tu aplicación creando un PIN de seguridad
   </Text>
   <View
-    className="sc-eCstlR ikpNpd"
+    className="sc-eCImPb ktYsMA"
   >
     <View
       style={
@@ -42,7 +42,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
       >
         <TextInput
           allowFontScaling={true}
-          className="sc-jSgvzq"
+          className="sc-jRQBWg"
           editable={true}
           keyboardType="decimal-pad"
           onChangeText={[Function]}
@@ -98,7 +98,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
       >
         <TextInput
           allowFontScaling={true}
-          className="sc-jSgvzq"
+          className="sc-jRQBWg"
           editable={true}
           keyboardType="decimal-pad"
           onChangeText={[Function]}
@@ -195,7 +195,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
           
         </Text>
         <Text
-          className="sc-iBPTik cjJIea"
+          className="sc-iCfMLu fkeGTJ"
           onPress={[Function]}
         >
           Aceptar términos y condiciones
@@ -204,7 +204,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
     </View>
   </View>
   <View
-    className="sc-pGacB eOJUyx"
+    className="sc-pVTFL eOshqQ"
   >
     <View
       style={
