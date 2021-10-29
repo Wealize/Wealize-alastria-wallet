@@ -5,6 +5,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- [Contributing document]
-- [Update pull request template]
+- [[Wallet] As a subject I want to register on blockchain when I receive a credential](https://wealize.atlassian.net/browse/AL-51)
+- [Contributing document]()
+- [Update pull request template]()
 - [[Wallet] Añadir test al wallet](https://wealize.atlassian.net/browse/AL-44)

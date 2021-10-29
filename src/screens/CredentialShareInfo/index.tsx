@@ -38,7 +38,7 @@ import { showDocumentFileType, showTypeText } from '../../utils/translateTypes'
 import { HistoricRepository } from '../../data/HistoricRepository'
 import { CREDENTIAL } from '../../constants/actionTypes'
 import { useGlobalState } from '../../context/Actions/ActionContext'
-import { checkNotifications } from 'react-native-permissions'
+import CredentialsService from '../../services/CredentialsService'
 
 const CredentialShareInfo = ({
   componentId,
@@ -91,10 +91,11 @@ const CredentialShareInfo = ({
       setStackRoot(componentId, SCREEN.ACCREDITATION_LIST)
     } else {
       try {
-        if (credentialInfo && entityData) {
+        if (credentialInfo && entityData && jwtData) {
           await CredentialRepository.saveCredential(
             parsedCredential(credentialInfo, entityData)
           )
+          await CredentialsService.registerInBlockchain([jwtData])
           AlertWithOutButtonDissmissable(
             CREDENTIAL_SHARE_INFO.ALERT.SUCCESS.TITLE,
             CREDENTIAL_SHARE_INFO.ALERT.SUCCESS.SUBTITLE
@@ -128,7 +129,7 @@ const CredentialShareInfo = ({
     }
   }
 
-  const saveCredentialInHistorics = (
+  const saveCredentialInHistorics = async (
     credentialInfo: CredentialInfoPayload,
     entityData: EntityData
   ) => {
@@ -137,7 +138,7 @@ const CredentialShareInfo = ({
         credentialInfo,
         entityData
       )
-      HistoricRepository.saveHistoric({
+      await HistoricRepository.saveHistoric({
         data: data,
         datetime: created,
         entity: issuerName,
