@@ -18,5 +18,5 @@ export const CheckboxStyled = styled(CheckBox).attrs({
   iconType: 'material',
   checkedIcon: 'check-box',
   uncheckedIcon: 'check-box-outline-blank',
-  checkedColor: Colors.principalLight
+  checkedColor: Colors.activeInput
 })``
