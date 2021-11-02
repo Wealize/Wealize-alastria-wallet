@@ -38,14 +38,15 @@ export const InputStyled = styled(Input).attrs({
   }
 })``
 
+export const CheckBoxContainer = styled(View)`
+  padding-top: 3%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+`
+
 export const TermsCheckBox = styled(CheckBox).attrs({
-  containerStyle: {
-    backgroundColor: Colors.mainBackground,
-    borderWidth: 0,
-    height: 20,
-    marginLeft: 1,
-    paddingTop: 8
-  },
+  containerStyle: { padding: 5 },
   size: 24,
   checkedColor: Colors.activeInput,
   uncheckedIcon: 'square-o',
@@ -57,7 +58,6 @@ export const TermsText = styled(Text)`
   color: ${Colors.activeInput};
   font-weight: normal;
   margin-bottom: 1%;
-  margin-left: 2%;
 `
 
 export const SplashActivityIndicator = styled(UIActivityIndicator)`
