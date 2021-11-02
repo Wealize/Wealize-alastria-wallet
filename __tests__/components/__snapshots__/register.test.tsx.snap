@@ -153,10 +153,11 @@ exports[`OnboardginComponent should render correctly 1`] = `
         style={
           Object {
             "margin": 5,
+            "marginHorizontal": 5,
             "marginLeft": 10,
             "marginRight": 10,
             "opacity": 1,
-            "padding": 5,
+            "padding": 4,
           }
         }
         testID="checkbox"

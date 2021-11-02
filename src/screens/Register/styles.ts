@@ -46,7 +46,10 @@ export const CheckBoxContainer = styled(View)`
 `
 
 export const TermsCheckBox = styled(CheckBox).attrs({
-  containerStyle: { padding: 5 },
+  containerStyle: {
+    padding: 4,
+    marginHorizontal: 5
+  },
   size: 24,
   checkedColor: Colors.activeInput,
   uncheckedIcon: 'square-o',
