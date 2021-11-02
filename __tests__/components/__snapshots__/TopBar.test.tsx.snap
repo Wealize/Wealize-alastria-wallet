@@ -2,28 +2,15 @@
 
 exports[`OnboardginComponent should render correctly TopBar with Props 1`] = `
 <View
-  style={
-    Object {
-      "backgroundColor": "#ffffff",
-      "flex": 1,
-    }
-  }
+  className="sc-bdvvtL dsCBrT"
 >
   <View
-    className="sc-bdvvtL icfKFC"
-    style={
-      Object {
-        "backgroundColor": "blue",
-      }
-    }
+    backgroundColor="blue"
+    className="sc-gsDKAQ cSNslz"
   >
     <Text
-      className="sc-gsDKAQ cYEvsf"
-      style={
-        Object {
-          "color": "red",
-        }
-      }
+      className="sc-dkPtRN jPLPTV"
+      textColor="red"
     >
       title
     </Text>
@@ -33,28 +20,15 @@ exports[`OnboardginComponent should render correctly TopBar with Props 1`] = `
 
 exports[`OnboardginComponent should render correctly TopBar without Props 1`] = `
 <View
-  style={
-    Object {
-      "backgroundColor": "#ffffff",
-      "flex": 1,
-    }
-  }
+  className="sc-bdvvtL dsCBrT"
 >
   <View
-    className="sc-bdvvtL icfKFC"
-    style={
-      Object {
-        "backgroundColor": "#002b6a",
-      }
-    }
+    backgroundColor="#242424"
+    className="sc-gsDKAQ caUOvk"
   >
     <Text
-      className="sc-gsDKAQ cYEvsf"
-      style={
-        Object {
-          "color": "#ffffff",
-        }
-      }
+      className="sc-dkPtRN fUICQl"
+      textColor="#ffffff"
     >
       title
     </Text>

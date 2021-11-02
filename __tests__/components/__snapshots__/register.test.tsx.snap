@@ -2,7 +2,7 @@
 
 exports[`OnboardginComponent should render correctly 1`] = `
 <View
-  className="sc-bdvvtL sc-gsDKAQ jKiuHH gCheCb"
+  className="sc-bdvvtL sc-gsDKAQ dMYQCW gCheCb"
 >
   <Text
     className="sc-dkPtRN hHtZNm"
@@ -49,7 +49,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
           placeholder="Pin de Seguridad"
           placeholderTextColor="#86939e"
           rejectResponderTermination={true}
-          selectionColor="#00b0ff"
+          selectionColor="#f06078"
           style={
             Object {
               "color": "#242424",
@@ -105,7 +105,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
           placeholder="Repetir Pin"
           placeholderTextColor="#86939e"
           rejectResponderTermination={true}
-          selectionColor="#00b0ff"
+          selectionColor="#f06078"
           style={
             Object {
               "color": "#242424",
@@ -195,7 +195,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
           
         </Text>
         <Text
-          className="sc-iCfMLu fkeGTJ"
+          className="sc-iCfMLu jhvGdo"
           onPress={[Function]}
         >
           Aceptar términos y condiciones
