@@ -20,7 +20,6 @@ export const MainView = styled(ScreenView)`
 `
 
 export const ViewContainerStyled = styled(ViewContainer)`
-  border-top-left-radius: 40px;
   background-color: ${Colors.mainBackground};
 `
 
