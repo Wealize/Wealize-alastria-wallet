@@ -1,4 +1,4 @@
-# WEALIZE - ALastria Wallet
+# WEALIZE - Alastria Wallet
 
 Example mobile application to implement Alastria user stories
 
@@ -300,3 +300,7 @@ The revocation process will be a request to the endpoint, this being the "cbu" p
     }
   }
 ```
+
+## Video Example 🎥
+
+https://user-images.githubusercontent.com/65024448/140102501-4130a239-2409-4b14-83c6-d1baed5dba44.mp4
