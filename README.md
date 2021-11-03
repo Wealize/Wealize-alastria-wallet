@@ -75,7 +75,7 @@ In the registration process, the wallet will be created from the PIN code that w
 
 To complete this process, it will be necessary to receive the DID from the backend, which we will capture with a QR code with the following structure.
 
-```json
+```json5
 {
   "token": "123j21i321i3h2h3ug2gdsuadhshdu1h232131312asd...", // JWT
   "subject_id": 1
@@ -84,7 +84,7 @@ To complete this process, it will be necessary to receive the DID from the backe
 
 the token will be a jwt in which it will be decoded and will show us the following structure.
 
-```json
+```json5
 // decoded token
 {
   "header": { "alg": "ES256K", "typ": "JWT" },
@@ -113,7 +113,7 @@ At the end of the process we will receive a security phrase to be able to change
 
 The process of saving a credential will start when we read a QR code, this QR code will have this structure.
 
-```json
+```json5
 {
   "id": 59,
   "secret": "1e9a88bc-ce57-4f6a-bfce-be5a49d57563",
@@ -141,7 +141,7 @@ const getCredentialWithSecret = async (qrReadEvent: BarCodeReadEvent) => {
 }
 ```
 
-```json
+```json5
 // This would be an example of the response of the request to the endpoint
 {
   "credential": "eyJhbGciOiJFUzI1NksiLCJ0eXAiOiJKV1QifQ.eyJpYXQiOjE2MjcDov..." // JWT
@@ -150,7 +150,7 @@ const getCredentialWithSecret = async (qrReadEvent: BarCodeReadEvent) => {
 
 This would be an example of the decoded JWT that we receive from the endpoint, which would be the structure of a credential.
 
-```json
+```json5
 // Decoded JWT
 {
   "header": { "alg": "ES256K", "typ": "JWT" },
@@ -193,11 +193,11 @@ This would be an example of the decoded JWT that we receive from the endpoint, w
 
 To share a credential we will have to read a presentation of said credential by means of a QR code, this QR code stores a JWT that when decoded will have the following structure.
 
-```json
+```json5
 "eyJhbGciOiJFUzI1NksiLCJ0eXAiOiJKV1QifQ.eyJjYnUiOiJByb2QuaGVyb2..." // JWT
 ```
 
-```json
+```json5
 // Decoded JWT
 {
   "header": { "alg": "ES256K", "typ": "JWT" },
