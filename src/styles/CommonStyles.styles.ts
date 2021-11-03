@@ -11,13 +11,15 @@ import {
 } from '../styles/FontFamilies'
 import { Colors } from '../utils/themes'
 
-export const MainView = styled(View)`
-  background-color: ${Colors.principalDark};
+export const ScreenView = styled(View)`
   flex: 1;
 `
 
+export const MainView = styled(ScreenView)`
+  background-color: ${Colors.principalDark};
+`
+
 export const ViewContainerStyled = styled(ViewContainer)`
-  border-top-left-radius: 40px;
   background-color: ${Colors.mainBackground};
 `
 
@@ -34,7 +36,6 @@ export const FilterContainer = styled(ViewContainer)`
   padding-top: 27px;
   padding-bottom: 10px;
   padding-right: 0px;
-  border-top-left-radius: 40px;
   background-color: ${Colors.mainBackground};
 `
 

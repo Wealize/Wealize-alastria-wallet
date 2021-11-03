@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { View } from 'react-native'
 import { NavigationFunctionComponent } from 'react-native-navigation'
 
 import { SCREEN } from '../../constants/screens'
@@ -7,6 +6,7 @@ import { IMG } from '../../constants/urlImages'
 import LocalStorageService, {
   STORAGE_KEYS
 } from '../../services/LocalStorageService'
+import { ScreenView } from '../../styles/CommonStyles.styles'
 import { initStackWithScreen } from '../../utils/navigation-utils'
 import { Colors } from '../../utils/themes'
 import {
@@ -37,7 +37,7 @@ const SplashScreen: NavigationFunctionComponent = () => {
   }
 
   return (
-    <View style={{ flex: 1 }}>
+    <ScreenView>
       <SplashImageBackground source={IMG.SPLASH_BAKCGROUND} style={{}}>
         <SplashLogo
           source={require('../../assets/img/splash-logo.png')}
@@ -47,14 +47,16 @@ const SplashScreen: NavigationFunctionComponent = () => {
         ></SplashLogo>
       </SplashImageBackground>
       <SplashActivityIndicator size={35} color={Colors.indicatorLoadingAlt} />
-    </View>
+    </ScreenView>
   )
 }
 
 SplashScreen.options = {
   statusBar: {
-    backgroundColor: Colors.mainBackground,
-    style: 'dark'
+    drawBehind: true,
+    visible: true,
+    backgroundColor: 'transparent',
+    style: 'light'
   }
 }
 

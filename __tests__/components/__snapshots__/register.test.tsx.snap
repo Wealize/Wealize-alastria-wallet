@@ -2,7 +2,7 @@
 
 exports[`OnboardginComponent should render correctly 1`] = `
 <View
-  className="sc-bdvvtL sc-gsDKAQ jKiuHH gCheCb"
+  className="sc-bdvvtL sc-gsDKAQ dMYQCW gCheCb"
 >
   <Text
     className="sc-dkPtRN hHtZNm"
@@ -49,7 +49,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
           placeholder="Pin de Seguridad"
           placeholderTextColor="#86939e"
           rejectResponderTermination={true}
-          selectionColor="#00b0ff"
+          selectionColor="#f06078"
           style={
             Object {
               "color": "#242424",
@@ -105,7 +105,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
           placeholder="Repetir Pin"
           placeholderTextColor="#86939e"
           rejectResponderTermination={true}
-          selectionColor="#00b0ff"
+          selectionColor="#f06078"
           style={
             Object {
               "color": "#242424",
@@ -132,79 +132,78 @@ exports[`OnboardginComponent should render correctly 1`] = `
       </Text>
     </View>
     <View
-      accessibilityRole="checkbox"
-      accessibilityState={
-        Object {
-          "checked": false,
-        }
-      }
-      accessible={true}
-      focusable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "backgroundColor": "#ffffff",
-          "borderColor": "#ededed",
-          "borderRadius": 3,
-          "borderWidth": 0,
-          "height": 20,
-          "margin": 5,
-          "marginLeft": 1,
-          "marginRight": 10,
-          "opacity": 1,
-          "padding": 10,
-          "paddingTop": 8,
-        }
-      }
-      testID="checkbox"
+      className="sc-gKclnd hKiCPJ"
     >
       <View
-        style={
+        accessibilityRole="checkbox"
+        accessibilityState={
           Object {
-            "alignItems": "center",
-            "flexDirection": "row",
+            "checked": false,
           }
         }
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "margin": 5,
+            "marginHorizontal": 5,
+            "marginLeft": 10,
+            "marginRight": 10,
+            "opacity": 1,
+            "padding": 4,
+          }
+        }
+        testID="checkbox"
       >
-        <Text
-          allowFontScaling={false}
+        <View
           style={
-            Array [
-              Object {
-                "color": "#bfbfbf",
-                "fontSize": 24,
-              },
-              Object {
-                "minWidth": 24,
-              },
-              Object {
-                "fontFamily": "FontAwesome",
-                "fontStyle": "normal",
-                "fontWeight": "normal",
-              },
-              Object {},
-            ]
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
           }
         >
-          
-        </Text>
-        <Text
-          className="sc-iCfMLu fkeGTJ"
-          onPress={[Function]}
-        >
-          Aceptar términos y condiciones
-        </Text>
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": "#bfbfbf",
+                  "fontSize": 24,
+                },
+                Object {
+                  "minWidth": 24,
+                },
+                Object {
+                  "fontFamily": "FontAwesome",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
       </View>
+      <Text
+        className="sc-furwcr heARiX"
+        onPress={[Function]}
+      >
+        Aceptar términos y condiciones
+      </Text>
     </View>
   </View>
   <View
-    className="sc-pVTFL eOshqQ"
+    className="sc-jrQzAO jJueht"
   >
     <View
       style={

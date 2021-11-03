@@ -20,6 +20,7 @@ export const ImageScreen = styled(ImageBackground).attrs({
 })`
   width: 100%;
   height: 100%;
+  background-color: black;
 `
 
 export const LinkHeader = styled(Text)`
@@ -34,7 +35,7 @@ export const TextHeader = styled(Text)`
   font-family: ${TITLE_FONT};
   font-weight: 600;
   font-size: 14px;
-  color: ${Colors.normalText};
+  color: ${Colors.principalButtons};
 `
 
 export const IconHeader = styled(Image)`
@@ -54,7 +55,7 @@ export const Title = styled(Text)`
   font-family: ${TITLE_FONT};
   font-weight: bold;
   font-size: 20px;
-  color: ${Colors.normalText};
+  color: ${Colors.invertedText};
 `
 
 export const SkipButton = styled(Text)`
@@ -63,17 +64,13 @@ export const SkipButton = styled(Text)`
   color: ${Colors.textButton};
 `
 
-export const SkipButtonAlt = styled(SkipButton)`
-  color: ${Colors.normalText};
-`
-
 export const Subtitle = styled(Text)`
   width: 45%;
   margin-left: 9%;
   margin-top: 20px;
   font-family: ${SUBTITLE_FONT};
   font-size: 14px;
-  color: ${Colors.normalText};
+  color: ${Colors.invertedTextLight};
 `
 
 export const SubtitleAlt = styled(Subtitle)`

@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 import { Colors } from '../utils/themes'
 
-
 const WhiteButton = styled(BaseButton).attrs({
+  titleStyle: { color: Colors.principalButtons, letterSpacing: 0.57 },
   buttonStyle: {
     height: 39,
     width: 224,

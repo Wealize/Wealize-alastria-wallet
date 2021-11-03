@@ -1,4 +1,4 @@
-import { CredentialData } from "./credentialInfo";
+import { CredentialData } from './credentialInfo'
 
 export interface FilterCheckbox {
   index: number
@@ -13,6 +13,7 @@ export interface CredentialShareCheckboxData {
 }
 
 export interface CredentialCheckBox extends CredentialData {
+  id: number
   checked: boolean
 }
 

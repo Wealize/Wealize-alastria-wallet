@@ -22,7 +22,7 @@ exports[`TouchableButton should render correctly TouchableButton 1`] = `
     style={
       Object {
         "alignItems": "center",
-        "backgroundColor": "#ca2b63",
+        "backgroundColor": "#f06078",
         "borderRadius": 45,
         "height": 39,
         "justifyContent": "center",

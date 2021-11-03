@@ -2,7 +2,7 @@
 
 exports[`OnboardginComponent should render correctly 1`] = `
 <View
-  className="sc-bdvvtL sc-gsDKAQ jKiuHH gCheCb"
+  className="sc-bdvvtL sc-gsDKAQ dMYQCW gCheCb"
 >
   <View
     style={
@@ -82,7 +82,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
                 style={
                   Array [
                     Object {
-                      "color": "#00b0ff",
+                      "color": "#f06078",
                       "fontSize": 21,
                     },
                     Object {
@@ -106,7 +106,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
         <Text
           style={
             Object {
-              "color": "#00b0ff",
+              "color": "#f06078",
               "fontFamily": "SourceSansPro",
               "fontSize": 14,
               "paddingVertical": 1,
@@ -159,7 +159,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
           placeholder="Pin de Seguridad"
           placeholderTextColor="#86939e"
           rejectResponderTermination={true}
-          selectionColor="#00b0ff"
+          selectionColor="#f06078"
           style={
             Object {
               "color": "#242424",
@@ -208,7 +208,7 @@ exports[`OnboardginComponent should render correctly 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#ca2b63",
+            "backgroundColor": "#f06078",
             "borderRadius": 45,
             "height": 39,
             "justifyContent": "center",

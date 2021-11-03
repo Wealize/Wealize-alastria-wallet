@@ -5,450 +5,401 @@ exports[`OnboardginComponent should render correctly 1`] = `
   className="sc-gsDKAQ cBNnHp"
 >
   <View
-    onLayout={[Function]}
-    style={
-      Array [
-        Object {
-          "backgroundColor": "transparent",
-          "flex": 1,
-          "position": "relative",
-        },
-        undefined,
-      ]
-    }
+    accessibilityIgnoresInvertColors={true}
+    style={Object {}}
   >
-    <RCTScrollView
-      activeDotColor="#ffffff"
-      automaticallyAdjustContentInsets={false}
-      autoplay={false}
-      autoplayDirection={true}
-      autoplayTimeout={2.5}
-      bounces={false}
-      className="sc-dkPtRN"
-      contentContainerStyle={
+    <Image
+      className="sc-hKwDye frRzRK"
+      source={
+        Object {
+          "testUri": "../../../src/assets/img/onboarding-background.png",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": undefined,
+            "width": undefined,
+          },
+          Object {
+            "resizeMode": "cover",
+          },
+        ]
+      }
+    />
+    <View
+      onLayout={[Function]}
+      style={
         Array [
           Object {
             "backgroundColor": "transparent",
+            "flex": 1,
+            "position": "relative",
           },
           undefined,
         ]
       }
-      contentOffset={
-        Object {
-          "x": 0,
-        }
-      }
-      disableNextButton={false}
-      disablePrevButton={false}
-      height={1334}
-      horizontal={true}
-      index={0}
-      loadMinimal={false}
-      loadMinimalSize={1}
-      loop={false}
-      onIndexChanged={[Function]}
-      onMomentumScrollEnd={[Function]}
-      onScrollBeginDrag={[Function]}
-      onScrollEndDrag={[Function]}
-      paginationStyle={
-        Object {
-          "bottom": "15%",
-        }
-      }
-      pagingEnabled={true}
-      removeClippedSubviews={true}
-      scrollsToTop={false}
-      showsButtons={false}
-      showsHorizontalScrollIndicator={false}
-      showsPagination={true}
-      showsVerticalScrollIndicator={false}
-      width={750}
     >
-      <View>
-        <View
-          style={
-            Array [
-              Object {
-                "height": 1334,
-                "width": 750,
-              },
-              Object {
-                "backgroundColor": "transparent",
-              },
-            ]
+      <RCTScrollView
+        activeDotColor="#ffffff"
+        automaticallyAdjustContentInsets={false}
+        autoplay={false}
+        autoplayDirection={true}
+        autoplayTimeout={2.5}
+        bounces={false}
+        className="sc-dkPtRN"
+        contentContainerStyle={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+            },
+            undefined,
+          ]
+        }
+        contentOffset={
+          Object {
+            "x": 0,
           }
-        >
-          <View
-            accessibilityIgnoresInvertColors={true}
-            style={Object {}}
-          >
-            <Image
-              className="sc-hKwDye jdyLJw"
-              source={
-                Object {
-                  "testUri": "../../../src/assets/img/onboarding-first-screen.png",
-                }
-              }
-              style={
-                Array [
-                  Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "height": undefined,
-                    "width": undefined,
-                  },
-                  Object {
-                    "resizeMode": "cover",
-                  },
-                ]
-              }
-            />
-            <Text
-              className="sc-eCImPb gisOel"
-            >
-              <Image
-                className="sc-gKclnd gIBqMp"
-                source={
-                  Object {
-                    "testUri": "../../../src/assets/img/icon-info.png",
-                  }
-                }
-              />
-              <Text
-                className="sc-jRQBWg QdMUG"
-              >
-                Más información
-              </Text>
-            </Text>
-            <View
-              className="sc-iCfMLu hhXOSJ"
-            >
-              <Text
-                className="sc-furwcr kiInJI"
-              >
-                Identfy
-              </Text>
-              <Text
-                className="sc-pVTFL fjZCJl"
-                onPress={[Function]}
-              >
-                Saltar
-              </Text>
-            </View>
-            <Text
-              className="sc-kDTinF rhxUk"
-            >
-              La aplicación que te permite guardar de forma segura tu documentación en el móvil.
-            </Text>
-          </View>
-        </View>
-        <View
-          style={
-            Array [
-              Object {
-                "height": 1334,
-                "width": 750,
-              },
-              Object {
-                "backgroundColor": "transparent",
-              },
-            ]
+        }
+        disableNextButton={false}
+        disablePrevButton={false}
+        height={1334}
+        horizontal={true}
+        index={0}
+        loadMinimal={false}
+        loadMinimalSize={1}
+        loop={false}
+        onIndexChanged={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        paginationStyle={
+          Object {
+            "bottom": "15%",
           }
-        >
+        }
+        pagingEnabled={true}
+        removeClippedSubviews={true}
+        scrollsToTop={false}
+        showsButtons={false}
+        showsHorizontalScrollIndicator={false}
+        showsPagination={true}
+        showsVerticalScrollIndicator={false}
+        width={750}
+      >
+        <View>
           <View
-            accessibilityIgnoresInvertColors={true}
-            style={Object {}}
-          >
-            <Image
-              className="sc-hKwDye jdyLJw"
-              source={
+            style={
+              Array [
                 Object {
-                  "testUri": "../../../src/assets/img/onboarding-second-screen.png",
-                }
-              }
-              style={
-                Array [
-                  Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "height": undefined,
-                    "width": undefined,
-                  },
-                  Object {
-                    "resizeMode": "cover",
-                  },
-                ]
-              }
-            />
-            <Text
-              className="sc-eCImPb gisOel"
-            >
-              <Image
-                className="sc-gKclnd gIBqMp"
-                source={
-                  Object {
-                    "testUri": "../../../src/assets/img/icon-info.png",
-                  }
-                }
-              />
-              <Text
-                className="sc-jRQBWg QdMUG"
-              >
-                Más información
-              </Text>
-            </Text>
-            <View
-              className="sc-iCfMLu hhXOSJ"
-            >
-              <Text
-                className="sc-furwcr kiInJI"
-              >
-                Guarda o comparte información
-              </Text>
-              <Text
-                className="sc-pVTFL sc-jrQzAO fjZCJl elCmcQ"
-                onPress={[Function]}
-              >
-                Saltar
-              </Text>
-            </View>
-            <Text
-              className="sc-kDTinF sc-iqseJM rhxUk dvvcPb"
-            >
-              Utiliza el escáner de la aplicación para escanear un código QR y guardar la información acreditada que te emitan las organizaciones. Usa el mismo procedimiento cuando una organización te solicite información, y podrás decidir qué información deseas compartir.
-            </Text>
-          </View>
-        </View>
-        <View
-          style={
-            Array [
-              Object {
-                "height": 1334,
-                "width": 750,
-              },
-              Object {
-                "backgroundColor": "transparent",
-              },
-            ]
-          }
-        >
-          <View
-            accessibilityIgnoresInvertColors={true}
-            style={Object {}}
-          >
-            <Image
-              className="sc-hKwDye jdyLJw"
-              source={
+                  "height": 1334,
+                  "width": 750,
+                },
                 Object {
-                  "testUri": "../../../src/assets/img/onboarding-third-screen.png",
-                }
-              }
-              style={
-                Array [
-                  Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
-                  },
-                  Object {
-                    "height": undefined,
-                    "width": undefined,
-                  },
-                  Object {
-                    "resizeMode": "cover",
-                  },
-                ]
-              }
-            />
-            <Text
-              className="sc-eCImPb gisOel"
-            >
-              <Image
-                className="sc-gKclnd gIBqMp"
-                source={
-                  Object {
-                    "testUri": "../../../src/assets/img/icon-info.png",
-                  }
-                }
-              />
-              <Text
-                className="sc-jRQBWg QdMUG"
-              >
-                Más información
-              </Text>
-            </Text>
-            <Text
-              className="sc-furwcr kiInJI"
-            >
-              Revocar información
-            </Text>
-            <Text
-              className="sc-kDTinF rhxUk"
-            >
-              En el momento que desees dejar de compartir información con una institución, puedes revocar su acceso desde el listado de accesos. Accede a él desde el menú de navegación inferior.
-            </Text>
+                  "backgroundColor": "transparent",
+                },
+              ]
+            }
+          >
             <View
-              className="sc-crHmcD kZJmtU"
+              className="sc-egiyK dVAHPF"
             >
+              <Text
+                className="sc-eCImPb gisOel"
+              >
+                <Image
+                  className="sc-gKclnd gIBqMp"
+                  source={
+                    Object {
+                      "testUri": "../../../src/assets/img/icon-info.png",
+                    }
+                  }
+                />
+                <Text
+                  className="sc-jRQBWg dmmszv"
+                >
+                  Más información
+                </Text>
+              </Text>
               <View
-                style={
-                  Array [
+                className="sc-iCfMLu hhXOSJ"
+              >
+                <Text
+                  className="sc-furwcr fIDfvS"
+                >
+                  Identfy
+                </Text>
+                <Text
+                  className="sc-pVTFL fjZCJl"
+                  onPress={[Function]}
+                >
+                  Saltar
+                </Text>
+              </View>
+              <Text
+                className="sc-jrQzAO eCjJBR"
+              >
+                La aplicación que te permite guardar de forma segura tu documentación en el móvil.
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 1334,
+                  "width": 750,
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                },
+              ]
+            }
+          >
+            <View
+              className="sc-egiyK dVAHPF"
+            >
+              <Text
+                className="sc-eCImPb gisOel"
+              >
+                <Image
+                  className="sc-gKclnd gIBqMp"
+                  source={
                     Object {
-                      "borderRadius": 3,
-                      "overflow": "hidden",
-                    },
+                      "testUri": "../../../src/assets/img/icon-info.png",
+                    }
+                  }
+                />
+                <Text
+                  className="sc-jRQBWg dmmszv"
+                >
+                  Más información
+                </Text>
+              </Text>
+              <View
+                className="sc-iCfMLu hhXOSJ"
+              >
+                <Text
+                  className="sc-furwcr fIDfvS"
+                >
+                  Guarda o comparte información
+                </Text>
+                <Text
+                  className="sc-pVTFL fjZCJl"
+                  onPress={[Function]}
+                >
+                  Saltar
+                </Text>
+              </View>
+              <Text
+                className="sc-jrQzAO sc-kDTinF eCjJBR fSePNk"
+              >
+                Utiliza el escáner de la aplicación para escanear un código QR y guardar la información acreditada que te emitan las organizaciones. Usa el mismo procedimiento cuando una organización te solicite información, y podrás decidir qué información deseas compartir.
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 1334,
+                  "width": 750,
+                },
+                Object {
+                  "backgroundColor": "transparent",
+                },
+              ]
+            }
+          >
+            <View
+              className="sc-egiyK dVAHPF"
+            >
+              <Text
+                className="sc-eCImPb gisOel"
+              >
+                <Image
+                  className="sc-gKclnd gIBqMp"
+                  source={
                     Object {
-                      "borderRadius": 3,
-                    },
-                    undefined,
-                    false,
-                  ]
-                }
+                      "testUri": "../../../src/assets/img/icon-info.png",
+                    }
+                  }
+                />
+                <Text
+                  className="sc-jRQBWg dmmszv"
+                >
+                  Más información
+                </Text>
+              </Text>
+              <Text
+                className="sc-furwcr fIDfvS"
+              >
+                Revocar información
+              </Text>
+              <Text
+                className="sc-jrQzAO eCjJBR"
+              >
+                En el momento que desees dejar de compartir información con una institución, puedes revocar su acceso desde el listado de accesos. Accede a él desde el menú de navegación inferior.
+              </Text>
+              <View
+                className="sc-iqseJM fqsOMy"
               >
                 <View
-                  accessibilityRole="button"
-                  accessibilityState={
-                    Object {
-                      "busy": false,
-                      "disabled": false,
-                    }
-                  }
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
-                    Object {
-                      "opacity": 1,
-                    }
+                    Array [
+                      Object {
+                        "borderRadius": 3,
+                        "overflow": "hidden",
+                      },
+                      Object {
+                        "borderRadius": 3,
+                      },
+                      undefined,
+                      false,
+                    ]
                   }
                 >
                   <View
+                    accessibilityRole="button"
+                    accessibilityState={
+                      Object {
+                        "busy": false,
+                        "disabled": false,
+                      }
+                    }
+                    accessible={true}
+                    focusable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "alignItems": "center",
-                        "backgroundColor": "#ffffff",
-                        "borderColor": "#ca2b63",
-                        "borderRadius": 45,
-                        "borderStyle": "solid",
-                        "borderWidth": 1,
-                        "flexDirection": "row",
-                        "height": 39,
-                        "justifyContent": "center",
-                        "padding": 8,
-                        "width": 224,
+                        "opacity": 1,
                       }
                     }
                   >
-                    <Text
+                    <View
                       style={
                         Object {
-                          "color": "#ca2b63",
-                          "fontSize": 18,
-                          "paddingVertical": 1,
-                          "textAlign": "center",
+                          "alignItems": "center",
+                          "backgroundColor": "#ffffff",
+                          "borderColor": "#f06078",
+                          "borderRadius": 45,
+                          "borderStyle": "solid",
+                          "borderWidth": 1,
+                          "flexDirection": "row",
+                          "height": 39,
+                          "justifyContent": "center",
+                          "padding": 8,
+                          "width": 224,
                         }
                       }
                     >
-                      Comenzar
-                    </Text>
+                      <Text
+                        style={
+                          Object {
+                            "color": "#f06078",
+                            "fontSize": 18,
+                            "letterSpacing": 0.57,
+                            "paddingVertical": 1,
+                            "textAlign": "center",
+                          }
+                        }
+                      >
+                        Comenzar
+                      </Text>
+                    </View>
                   </View>
                 </View>
               </View>
             </View>
           </View>
         </View>
+      </RCTScrollView>
+      <View
+        pointerEvents="none"
+        style={
+          Array [
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "transparent",
+              "bottom": 25,
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+            },
+            Object {
+              "bottom": "15%",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "#ffffff",
+                "borderRadius": 4,
+                "height": 8,
+                "marginBottom": 3,
+                "marginLeft": 3,
+                "marginRight": 3,
+                "marginTop": 3,
+                "width": 8,
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(0,0,0,.2)",
+                "borderRadius": 4,
+                "height": 8,
+                "marginBottom": 3,
+                "marginLeft": 3,
+                "marginRight": 3,
+                "marginTop": 3,
+                "width": 8,
+              },
+              undefined,
+            ]
+          }
+        />
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "rgba(0,0,0,.2)",
+                "borderRadius": 4,
+                "height": 8,
+                "marginBottom": 3,
+                "marginLeft": 3,
+                "marginRight": 3,
+                "marginTop": 3,
+                "width": 8,
+              },
+              undefined,
+            ]
+          }
+        />
       </View>
-    </RCTScrollView>
-    <View
-      pointerEvents="none"
-      style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "backgroundColor": "transparent",
-            "bottom": 25,
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-          },
-          Object {
-            "bottom": "15%",
-          },
-        ]
-      }
-    >
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "#ffffff",
-              "borderRadius": 4,
-              "height": 8,
-              "marginBottom": 3,
-              "marginLeft": 3,
-              "marginRight": 3,
-              "marginTop": 3,
-              "width": 8,
-            },
-            undefined,
-          ]
-        }
-      />
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "rgba(0,0,0,.2)",
-              "borderRadius": 4,
-              "height": 8,
-              "marginBottom": 3,
-              "marginLeft": 3,
-              "marginRight": 3,
-              "marginTop": 3,
-              "width": 8,
-            },
-            undefined,
-          ]
-        }
-      />
-      <View
-        style={
-          Array [
-            Object {
-              "backgroundColor": "rgba(0,0,0,.2)",
-              "borderRadius": 4,
-              "height": 8,
-              "marginBottom": 3,
-              "marginLeft": 3,
-              "marginRight": 3,
-              "marginTop": 3,
-              "width": 8,
-            },
-            undefined,
-          ]
-        }
-      />
     </View>
   </View>
 </View>
