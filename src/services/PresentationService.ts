@@ -1,5 +1,5 @@
 import Web3 from 'web3'
-import { WEALIZE_NODE_IP } from '@env'
+import { NODE_IP } from '@env'
 import { tokensFactory, transactionFactory } from 'alastria-identity-lib'
 import { v4 as uuid4 } from 'uuid'
 
@@ -33,7 +33,7 @@ export default class PresentationService {
   public static async getPublicKeyFromDid(
     decodedJWT: PresentationRequest
   ): Promise<string> {
-    const web3 = new Web3(WEALIZE_NODE_IP)
+    const web3 = new Web3(NODE_IP)
     const currentPubKey = transactionFactory.publicKeyRegistry.getCurrentPublicKey(
       web3,
       decodedJWT.payload.iss

@@ -1,4 +1,4 @@
-import { WEALIZE_NODE_IP } from '@env'
+import { NODE_IP } from '@env'
 import Web3 from 'web3'
 import { transactionFactory } from 'alastria-identity-lib'
 import { BarCodeReadEvent } from 'react-native-camera'
@@ -67,7 +67,7 @@ export default class AlastriaIdentityService {
   }
 
   public static async getPublicKeyFromDid(did: string): Promise<string> {
-    const web3 = new Web3(WEALIZE_NODE_IP)
+    const web3 = new Web3(NODE_IP)
     const currentPubKey = transactionFactory.publicKeyRegistry.getCurrentPublicKey(
       web3,
       did
@@ -85,7 +85,7 @@ export default class AlastriaIdentityService {
   }
 
   public static async getEntityDataFromDid(did: string): Promise<EntityData> {
-    const web3 = new Web3(WEALIZE_NODE_IP)
+    const web3 = new Web3(NODE_IP)
     const entityData = transactionFactory.identityManager.getEntity(web3, did)
     return await web3.eth
       .call(entityData)
