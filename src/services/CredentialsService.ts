@@ -1,5 +1,5 @@
 import { tokensFactory, transactionFactory } from 'alastria-identity-lib'
-import { WEALIZE_NODE_IP } from '@env'
+import { NODE_IP } from '@env'
 import Web3 from 'web3'
 
 import { CredentialRepository } from '../data/CredentialRepository'
@@ -105,7 +105,7 @@ class CredentialsService {
   public static async getCredentialStatus(
     credential: CredentialData
   ): Promise<string> {
-    const web3 = new Web3(WEALIZE_NODE_IP)
+    const web3 = new Web3(NODE_IP)
     const psmHash = await PsmHashService.generateCredentialPsmHash(
       credential.data,
       credential.issuerDid
