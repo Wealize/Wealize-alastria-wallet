@@ -352,3 +352,6 @@ The revocation process will be a request to the endpoint, this being the "cbu" p
 ```
 
 ## Video Example 🎥
+
+https://user-images.githubusercontent.com/65024448/140314470-3a64952e-c343-40d1-afe6-ebfe374340ef.mp4
+
