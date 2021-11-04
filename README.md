@@ -357,6 +357,6 @@ https://user-images.githubusercontent.com/65024448/140314470-3a64952e-c343-40d1-
 
 ## License
 
-Copyright © 2021, Wealize.
+#### Copyright © 2021, Wealize.
 
-BSD 3-clause [enlazado a BSD-License.md]
+[BSD 3-clause](./docs/BSD-License.md)
