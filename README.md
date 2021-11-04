@@ -359,4 +359,4 @@ https://user-images.githubusercontent.com/65024448/140314470-3a64952e-c343-40d1-
 
 #### Copyright © 2021, Wealize.
 
-[BSD 3-clause](./docs/BSD-License.md)
+[BSD 3-clause](LICENSE.md)
