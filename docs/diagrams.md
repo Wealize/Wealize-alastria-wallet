@@ -1,5 +1,3 @@
-asdsadsadsada
-
 ```mermaid
 classDiagram
 class EntityData {
@@ -18,7 +16,7 @@ class BarCodeReadEvent {
 class AlastriaIdentityService {
   <<service>>
     createAlastriaId(qrReadEvent: BarCodeReadEvent) Promise(void)
-    getUserDid(alastriaAIC: string, victimId: string, cbu: string) Promise(string)
+    getUserDid(alastriaAIC: string, subjectId: string, cbu: string) Promise(string)
     linkToOrganization(qrReadEvent: BarCodeReadEvent) Promise(void)
     getPublicKeyFromDid(did: string) Promise(string)
     getEntityDataFromDid(did: string) Promise(EntityData)
@@ -104,7 +102,7 @@ class VerifiableCredential {
 }
 class CredentialSubjectData {
   <<interface>>
-    victimInfo: CredentialSubjectInfo
+    subjectInfo: CredentialSubjectInfo
 }
 class CredentialSubjectInfo {
   <<interface>>
