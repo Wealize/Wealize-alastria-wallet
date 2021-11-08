@@ -13,6 +13,7 @@ export interface PresentationRequestPayload {
   cbu: string
   pr: PresentationContent
   jti: string
+  vc?: Object
 }
 
 export interface PresentationContent {
