@@ -355,6 +355,10 @@ The revocation process will be a request to the endpoint, this being the "cbu" p
 
 https://user-images.githubusercontent.com/65024448/140314470-3a64952e-c343-40d1-afe6-ebfe374340ef.mp4
 
+## Class Diagram
+
+![Captura de pantalla 2021-11-08 a las 15 32 20](https://user-images.githubusercontent.com/65024448/140761920-0456d150-c208-41ff-b34a-db41ef2866c6.png)
+
 ## License
 
 #### Copyright © 2021, Wealize.
