@@ -370,7 +370,7 @@ https://user-images.githubusercontent.com/65024448/140314470-3a64952e-c343-40d1-
 
 ## Class Diagram
 
-![Captura de pantalla 2021-11-08 a las 15 32 20](https://user-images.githubusercontent.com/65024448/140761920-0456d150-c208-41ff-b34a-db41ef2866c6.png)
+![Captura de pantalla 2021-11-08 a las 17 03 06](https://user-images.githubusercontent.com/65024448/140775971-b696dbd2-59b1-493d-a7ac-d981bea3d483.png)
 
 ## License
 
