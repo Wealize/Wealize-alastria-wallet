@@ -5,6 +5,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- [[Wallet] Completar flujos](https://wealize.atlassian.net/browse/AL-52)
 - [Crear diagrama de clases](https://wealize.atlassian.net/browse/AL-63)
 - [[Wallet] Update Readme](https://wealize.atlassian.net/browse/AL-60)
 - [[Wallet] Design review](https://wealize.atlassian.net/browse/AL-58)
