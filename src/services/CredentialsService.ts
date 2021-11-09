@@ -98,8 +98,8 @@ class CredentialsService {
 
   public static getCredentialType(credential: CredentialInfo) {
     return (
-      credential.payload.vc.credentialSubject.victimInfo.file_type ||
-      credential.payload.vc.credentialSubject.victimInfo.info_type
+      credential.payload.vc.credentialSubject.subjectInfo.file_type ||
+      credential.payload.vc.credentialSubject.subjectInfo.info_type
     )
   }
 

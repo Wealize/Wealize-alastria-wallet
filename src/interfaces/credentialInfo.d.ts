@@ -22,7 +22,7 @@ export interface VerifiableCredential {
 }
 
 export interface CredentialSubjectData {
-  victimInfo: CredentialSubjectInfo
+  subjectInfo: CredentialSubjectInfo
 }
 
 export interface CredentialSubjectInfo {

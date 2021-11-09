@@ -48,7 +48,7 @@ const CredentialShareInfo = ({
   const [dataCredentials] = useGlobalState('dataCredentials')
   const [entityData, setEntityData] = useState<EntityData | null>(null)
   const [isLoading, setIsLoading] = useState(false)
-  const credentialSubjectInfo = credentialInfo?.vc.credentialSubject.victimInfo
+  const credentialSubjectInfo = credentialInfo?.vc.credentialSubject.subjectInfo
   const { info_type: infoType } = credentialSubjectInfo || {}
 
   useEffect(() => {

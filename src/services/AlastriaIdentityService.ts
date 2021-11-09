@@ -22,7 +22,7 @@ export default class AlastriaIdentityService {
       )
       const did = await AlastriaIdentityService.getUserDid(
         alastriaAIC,
-        CredentialQrData.victim_id,
+        CredentialQrData.subject_id,
         decodedJWT.payload.cbu
       )
 
@@ -34,12 +34,12 @@ export default class AlastriaIdentityService {
 
   public static async getUserDid(
     alastriaAIC: string,
-    victimId: string,
+    subjectId: string,
     cbu: string
   ) {
     const response = await ApiClient.post(cbu, {
       AIC: alastriaAIC,
-      victim_id: victimId
+      subject_id: subjectId
     })
     return response.did
   }
@@ -59,7 +59,7 @@ export default class AlastriaIdentityService {
 
       await ApiClient.post(decodedJWT.payload.cbu, {
         did: did,
-        victim_id: CredentialQrData.victim_id
+        subject_id: CredentialQrData.subject_id
       })
     } else {
       throw new Error('Invalid token')

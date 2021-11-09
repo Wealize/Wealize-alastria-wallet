@@ -78,11 +78,11 @@ const QrReader: NavigationFunctionComponent = ({
 
   const isAlastriaToken = (qrReadEvent: BarCodeReadEvent) => {
     // eslint-disable-next-line camelcase
-    const { victim_id, token }: AlastriaTokenQrData = JSON.parse(
+    const { subject_id, token }: AlastriaTokenQrData = JSON.parse(
       qrReadEvent.data
     )
     // eslint-disable-next-line camelcase
-    return victim_id && token
+    return subject_id && token
   }
 
   const getCredentialWithSecret = async (qrReadEvent: BarCodeReadEvent) => {

@@ -20,9 +20,9 @@ export const showFileTypeText = (fileType: string | undefined): string => {
 }
 
 export const showDocumentFileType = (
-  victimInfo: CredentialSubjectInfo
+  subjectInfo: CredentialSubjectInfo
 ): string => {
-  const { file_type: fileType } = victimInfo
+  const { file_type: fileType } = subjectInfo
   if (!fileType) return ''
   return `- ${FILE_TYPES[fileType as keyof FileTypes]}` || DEFAULT_TYPE
 }
