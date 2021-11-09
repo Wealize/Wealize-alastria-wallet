@@ -118,6 +118,9 @@ The iss that will be the did, will be verified and saved in the wallet.
 
 At the end of the process we will receive a security phrase to be able to change the pin in case of forgetting it.
 
+#### Alastria Docs
+- [US-2.1.1 Alastria ID Authentication](https://github.com/alastria/alastria-identity/blob/master/docs/img/US-2.1.1%20Alastria%20ID%20Authentication.png)
+
 ### Store Credential
 
 The process of saving a credential will start when we read a QR code, this QR code will have this structure.
@@ -217,6 +220,9 @@ During the process, the services of alastria will be used to register in the blo
   }
 ```
 
+#### Alastria Docs
+- [US-2.2.1 Credential Issuance](https://github.com/alastria/alastria-identity/blob/master/docs/img/US-2.2.1%20Credential%20Issuance.png)
+
 ### Share Presentation
 
 To share a credential we will have to read a presentation of said credential by means of a QR code, this QR code stores a JWT that when decoded will have the following structure.
@@ -290,6 +296,10 @@ During this process, the alastria service is used to create the registry in bloc
   }
 ```
 
+#### Alastria Docs
+- [US-2.3.1.1 Presentation Request](https://github.com/alastria/alastria-identity/blob/master/docs/img/US-2.3.1.1%20Presentation%20Request.png)
+- [US-2.5 Alastria ID Withdraw Presentation](https://github.com/alastria/alastria-identity/blob/develop/docs/img/US-2.5%20Alastria%20ID%20Withdraw%20Presentation.png)
+
 ### Differentiation between Credential / Presentation
 
 To differentiate in the process if the QR is a presentation or a credential, we will check if the payload has the property of pr / vc, these should only appear in the case of presentation "pr" (VerifiablePresentationRequest) and credential "vc" (VerifiableCredential)
@@ -351,9 +361,16 @@ The revocation process will be a request to the endpoint, this being the "cbu" p
   }
 ```
 
+#### Alastria Docs
+- [US-2.2.2 Credential Revocation](https://github.com/alastria/alastria-identity/blob/master/docs/img/US-2.2.2%20Credential%20Revocation.png)
+
 ## Video Example 🎥
 
 https://user-images.githubusercontent.com/65024448/140314470-3a64952e-c343-40d1-afe6-ebfe374340ef.mp4
+
+## Class Diagram
+
+![Captura de pantalla 2021-11-08 a las 17 03 06](https://user-images.githubusercontent.com/65024448/140775971-b696dbd2-59b1-493d-a7ac-d981bea3d483.png)
 
 ## License
 

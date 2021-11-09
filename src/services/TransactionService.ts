@@ -35,7 +35,7 @@ export default class TransactionService {
   public static updateSubjectPresentation(
     presentationPmHash: string,
     status: number
-  ) {
+  ): Transaction {
     const web3 = new Web3(NODE_IP)
 
     return transactionFactory.presentationRegistry.updateSubjectPresentation(

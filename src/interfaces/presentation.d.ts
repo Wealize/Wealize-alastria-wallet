@@ -5,13 +5,15 @@ export interface PresentationPayload {
   iat: number
   exp?: number
   nbf?: number
-  vp: {
-    '@context': string[]
-    type: string[]
-    procHash: string
-    procUrl: string
-    verifiableCredential: string[]
-  }
+  vp: VerifiablePresentation
+}
+
+export interface VerifiablePresentation {
+  '@context': string[]
+  type: string[]
+  procHash: string
+  procUrl: string
+  verifiableCredential: string[]
 }
 
 export interface Presentation {

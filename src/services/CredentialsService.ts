@@ -7,7 +7,8 @@ import {
   CredentialData,
   CredentialInfo,
   CredentialRequest,
-  CredentialRequested
+  CredentialRequested,
+  FoundRequestedCredentials
 } from '../interfaces/credentialInfo'
 import PsmHashService from './PsmHashService'
 import { CREDENTIAL_STATUS } from '../constants/text'
@@ -81,7 +82,7 @@ class CredentialsService {
   private static async findRequestedCredentials(
     credentials: CredentialInfo[],
     credentialsRequest: CredentialRequest[]
-  ) {
+  ): Promise<FoundRequestedCredentials[]> {
     return credentialsRequest
       .map((credentialRequest) => {
         const index = credentials.findIndex(

@@ -1,4 +1,6 @@
 /* eslint-disable camelcase */
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
+
 export interface CredentialInfo {
   header: {
     alg: string
@@ -10,11 +12,13 @@ export interface CredentialInfo {
 export interface CredentialInfoPayload {
   iat: number
   iss: string
-  vc: {
-    type: string[]
-    '@context': string[]
-    credentialSubject: CredentialSubjectData
-  }
+  vc: VerifiableCredential
+}
+
+export interface VerifiableCredential {
+  type: string[]
+  '@context': string[]
+  credentialSubject: CredentialSubjectData
 }
 
 export interface CredentialSubjectData {
@@ -34,7 +38,6 @@ export interface CredentialNieSubjectInfo extends CredentialSubjectInfo {
   identifier: CredentiaInfoIdentifier
   name: string
 }
-
 
 export interface CredentialGenericSubjectInfo extends CredentialSubjectInfo {
   document: string
@@ -66,3 +69,6 @@ export interface CredentialRequested {
   credential: CredentialInfo
   required: boolean
 }
+
+export interface FoundRequestedCredentials
+  extends Omit<CredentialRequested, 'credential'> {}
