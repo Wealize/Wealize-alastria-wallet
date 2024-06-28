@@ -11,6 +11,16 @@ Example mobile application to implement Alastria user stories
 - Android Studio / xCode (IOS)
 - openjdk 1.8
 
+NOTE: Build made on 26 june 2024:
+- Node.js 12.22
+- openjdk 1.8
+- Update react-native to 0.63.5 (bug fixes)
+- Update react-native-navigation to 7.30.2 (bug patch - java version downgrade)[https://github.com/wix/react-native-navigation/releases/tag/7.30.2]
+- Kotlin version 1.6.0 - apply in build.gradle and app/build.gradle
+- compilaSDKVersion 31 - apply in app/build.gradle
+
+These changes are not in the repository, they must be applied
+
 ## Installation 🔧
 
 ```bash
