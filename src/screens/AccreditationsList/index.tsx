@@ -118,7 +118,7 @@ const AccreditationsList = ({ componentId }: NavigationProps) => {
   ) => {
     return (
       <View>
-        <IconListElement title={showTypeText(credential.key)} />
+        <IconListElement title={credential.key} />
         <AccordionAngleIcon
           source={
             isActive
