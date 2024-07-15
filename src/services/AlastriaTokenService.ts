@@ -8,7 +8,7 @@ import {
 import { privateToPublic, toBuffer } from 'ethereumjs-util'
 
 import { AlastriaToken } from '../interfaces/alastriaToken'
-import { getPrivateKey, getWalletAddress } from '../utils/keychain'
+import { getDid, getPrivateKey, getWalletAddress } from '../utils/keychain'
 import JwtService from './JwtService'
 
 export default class AlastriaTokenService extends JwtService {
@@ -59,6 +59,45 @@ export default class AlastriaTokenService extends JwtService {
     // Sign Alastria AIC with the user private key
     return tokensFactory.tokens.signJWT(
       alastriaAIC,
+      userPrivateKey.substring(2)
+    )
+  }
+
+  public static async createAlastriaSession(jwt: string, type: string): Promise<string> {
+    const userPrivateKey = await getPrivateKey()
+    const userWalletAddress = await getWalletAddress()
+
+    if (!userPrivateKey || !userWalletAddress) {
+      throw new Error('Error getting the credentials from secure storage!')
+    }
+
+    const userPublicKey = `0x${privateToPublic(
+      toBuffer(userPrivateKey)
+    ).toString('hex')}`
+
+    const context: string[] = []
+    const iss = await getDid() || ''
+    const kid = `${iss}#keys-1`
+    const typeArray = [type]
+    const exp = (Math.floor(Date.now() / 1000) + 3600)
+    const nbf = (Math.floor(Date.now() / 1000) - 3600)
+    const jti = 'Inetum dev/alastria-token/95e2e544-c5fa-46b4-ab91-82b97b42ff2e'
+
+
+    const alastriaSession = tokensFactory.tokens.createAlastriaSession(
+      context,
+      iss,
+      kid,
+      typeArray,
+      jwt,
+      exp,
+      userPublicKey,
+      nbf,
+      jti
+    )
+
+    return tokensFactory.tokens.signJWT(
+      alastriaSession,
       userPrivateKey.substring(2)
     )
   }
