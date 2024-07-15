@@ -97,9 +97,9 @@ class CredentialsService {
   }
 
   public static getCredentialType(credential: CredentialInfo) {
+    const allTypes = Object.keys(credential?.payload?.vc?.credentialSubject)
     return (
-      credential.payload.vc.credentialSubject.subjectInfo.file_type ||
-      credential.payload.vc.credentialSubject.subjectInfo.info_type
+      allTypes.find(t => t !== 'levelOfAssurance')
     )
   }
 
