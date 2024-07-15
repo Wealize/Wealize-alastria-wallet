@@ -73,13 +73,17 @@ export default class PresentationService {
         credentials,
         presentationRequest.pr.procUrl,
         presentationRequest.pr.procHash,
-        ['VerifiablePresentation', 'AlastriaVerifiablePresentation'],
+        // Remove types to avoid duplicated (library assigns them)
+        [],
         undefined,
         undefined,
         undefined,
         undefined,
         uuid4()
       )
+      // Add custom claim jtipr to presentationContent
+      // @ts-ignore
+      presentationContent.payload.jtipr = presentationRequest.jti
 
       presentationJwt = tokensFactory.tokens.signJWT(
         presentationContent,
@@ -167,7 +171,7 @@ export default class PresentationService {
 
   public static async sendPresentation(presentation: string, url: string) {
     await ApiClient.post(url, {
-      presentation
+      jwt: presentation
     })
     await this.registerInBlockchain(presentation)
   }
