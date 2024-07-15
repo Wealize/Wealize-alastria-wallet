@@ -2,67 +2,108 @@ import { NODE_IP } from '@env'
 import Web3 from 'web3'
 import { transactionFactory } from 'alastria-identity-lib'
 import { BarCodeReadEvent } from 'react-native-camera'
+import axios from 'axios'
 
-import ApiClient from './ApiClient'
 import { EntityData } from '../interfaces/entityData'
 import { getDid, saveDID } from '../utils/keychain'
 import AlastriaTokenService from './AlastriaTokenService'
 
+
 export default class AlastriaIdentityService {
   public static async createAlastriaId(qrReadEvent: BarCodeReadEvent) {
-    const CredentialQrData = JSON.parse(qrReadEvent.data)
-    const decodedJWT = AlastriaTokenService.decode(CredentialQrData.token)
+
+    const data = qrReadEvent.data
+
+    const decodedJWT = AlastriaTokenService.decode(data)
+
     const issuerPublicKey = await AlastriaIdentityService.getPublicKeyFromDid(
       decodedJWT.payload.iss
     )
     // Token validation
-    if (AlastriaTokenService.verify(CredentialQrData.token, issuerPublicKey)) {
-      const alastriaAIC = await AlastriaTokenService.createAlastriaAIC(
-        CredentialQrData.token
-      )
-      const did = await AlastriaIdentityService.getUserDid(
-        alastriaAIC,
-        CredentialQrData.subject_id,
-        decodedJWT.payload.cbu
-      )
+    try {
+      if (AlastriaTokenService.verify(data, issuerPublicKey)) {
+        const alastriaAIC = await AlastriaTokenService.createAlastriaAIC(
+          qrReadEvent.data
+        )
 
-      await saveDID(did)
-    } else {
-      throw new Error('Invalid token')
+        const did = await AlastriaIdentityService.getUserDid(
+          alastriaAIC, // aic
+          decodedJWT.payload.cbu // url
+        )
+
+        await saveDID(did)
+      } else {
+        console.error('InvalidToken')
+        throw new Error('Invalid token')
+      }
+    } catch (error) {
+      console.error('An error occurred:', error)
+    }
+
+  }
+
+
+  public static async getUserDid(alastriaAIC: string, cbu: string) {
+    try {
+      const response = await axios.post(cbu, {
+        // Cambiado el campo que espera de AIC a jwt (donde está el estandar¿?)
+        jwt: alastriaAIC
+      }, {
+        timeout: 90000 // Para evitar que haga timeout, la tx demora mucho
+      })
+      return response.data.did
+    } catch (error) {
+      console.error('Config:', error)
+      throw error
     }
   }
 
-  public static async getUserDid(
-    alastriaAIC: string,
-    subjectId: string,
-    cbu: string
-  ) {
-    const response = await ApiClient.post(cbu, {
-      AIC: alastriaAIC,
-      subject_id: subjectId
-    })
-    return response.did
-  }
 
-  public static async linkToOrganization(qrReadEvent: BarCodeReadEvent) {
-    const CredentialQrData = JSON.parse(qrReadEvent.data)
-    const decodedJWT = AlastriaTokenService.decode(CredentialQrData.token)
+  public static async linkToOrganization(qrReadEvent: BarCodeReadEvent, type: string) {
+    // JSON.parse is not neccesary here
+    // const CredentialQrData = JSON.parse(qrReadEvent.data)
+    const CredentialQrData = qrReadEvent.data
+
+    // Originally we were waiting for an object with a subjectId and a token. Inetum is sending different information. Flow is broken because of that
+
+    // const decodedJWT = AlastriaTokenService.decode(CredentialQrData.token)
+    const decodedJWT = AlastriaTokenService.decode(CredentialQrData)
+
     const issuerPublicKey = await AlastriaIdentityService.getPublicKeyFromDid(
       decodedJWT.payload.iss
     )
     // Token validation
-    if (AlastriaTokenService.verify(CredentialQrData.token, issuerPublicKey)) {
-      const did = await getDid()
-      if(!did) {
-        throw new Error("Keychain couldn't be accessed!")
-      }
+    try {
+      if (AlastriaTokenService.verify(CredentialQrData, issuerPublicKey)) {
+        const did = await getDid()
+        if (!did) {
+          throw new Error("Keychain couldn't be accessed!")
+        }
+        try {
 
-      await ApiClient.post(decodedJWT.payload.cbu, {
-        did: did,
-        subject_id: CredentialQrData.subject_id
-      })
-    } else {
-      throw new Error('Invalid token')
+          const jwt = await AlastriaTokenService.createAlastriaSession(CredentialQrData, type)
+
+          const response = await axios.get(decodedJWT.payload.cbu, {
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            params: {
+              'signed-object': jwt.toString()
+            }
+          })
+
+          return response.data
+
+        } catch (error) {
+          console.error('Config:', error)
+          throw error
+        }
+      } else {
+        throw new Error('Invalid token')
+      }
+    } catch (error) {
+      console.error('An error occurred:', error)
+      throw error
     }
   }
 

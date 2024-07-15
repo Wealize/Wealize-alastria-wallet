@@ -7,7 +7,7 @@ import {
   CredentialNieSubjectInfo,
   CredentialGenericSubjectInfo
 } from '../interfaces/credentialInfo'
-import { numericDateToTime } from '../utils/dateParser'
+import { convertToTitleCase, numericDateToTime } from '../utils/dateParser'
 import { DocumentLink } from './styles/CredentialContainer.styles'
 import {
   ContainerSyled,
@@ -21,7 +21,6 @@ import { pushScreen } from '../utils/navigation-utils'
 import { fileCheckType } from '../utils/checkTypes'
 import { DAY_MONTH_YEAR } from '../constants/formats'
 import { SCREEN } from '../constants/screens'
-import { showFileTypeText } from '../utils/translateTypes'
 import { translateGender } from '../utils/translates'
 
 export const RenderInfoContent = ({
@@ -136,8 +135,8 @@ const GenericContent = ({
         {credential.status}
       </TextInfo>
       <TextInfo>
-        <FieldName>{CREDENTIAL_DESCRIPTION.TYPE} </FieldName>
-        {showFileTypeText(genericInfo.file_type)}
+        <FieldName>{genericInfo} </FieldName>
+        {convertToTitleCase(genericInfo.toString())}
       </TextInfo>
       <TextInfo>
         <FieldName>{CREDENTIAL_DESCRIPTION.ISSUER} </FieldName>
@@ -176,7 +175,7 @@ const DefaultContent = ({
       </TextInfo>
       <TextInfo>
         <FieldName>{CREDENTIAL_DESCRIPTION.TYPE} </FieldName>
-        {showFileTypeText(genericInfo.file_type)}
+        {convertToTitleCase(genericInfo.toString())}
       </TextInfo>
       <TextInfo>
         <FieldName>{CREDENTIAL_DESCRIPTION.ISSUER} </FieldName>

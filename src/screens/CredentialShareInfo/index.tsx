@@ -34,22 +34,24 @@ import {
   CredentialInfoPayload
 } from '../../interfaces/credentialInfo'
 import { SCREEN } from '../../constants/screens'
-import { showDocumentFileType, showTypeText } from '../../utils/translateTypes'
 import { HistoricRepository } from '../../data/HistoricRepository'
 import { CREDENTIAL } from '../../constants/actionTypes'
 import { useGlobalState } from '../../context/Actions/ActionContext'
 import CredentialsService from '../../services/CredentialsService'
+import { convertToTitleCase } from '../../utils/dateParser'
 
 const CredentialShareInfo = ({
   componentId,
   credentialInfo,
   jwtData
 }: NavigationProps) => {
+
   const [dataCredentials] = useGlobalState('dataCredentials')
   const [entityData, setEntityData] = useState<EntityData | null>(null)
   const [isLoading, setIsLoading] = useState(false)
-  const credentialSubjectInfo = credentialInfo?.vc.credentialSubject.subjectInfo
-  const { info_type: infoType } = credentialSubjectInfo || {}
+  const allTypes = Object.keys(credentialInfo?.vc?.credentialSubject!)
+  const credentialSubjectInfo = allTypes.find(t => t !== 'levelOfAssurance')
+  const infoType = credentialSubjectInfo
 
   useEffect(() => {
     loadEntityData()
@@ -171,9 +173,9 @@ const CredentialShareInfo = ({
                 {CREDENTIAL_SHARE_INFO.SUBTITLE}
               </Subtitle>
               <SubtitleType>
-                {showTypeText(infoType)}{' '}
+                {'Tipo'}{' : '}
                 {credentialSubjectInfo &&
-                  showDocumentFileType(credentialSubjectInfo)}
+                  convertToTitleCase(credentialSubjectInfo)}
               </SubtitleType>
             </ContainerSubtitle>
 
