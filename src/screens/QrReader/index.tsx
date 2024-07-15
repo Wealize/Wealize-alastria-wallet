@@ -8,18 +8,17 @@ import Snackbar from 'react-native-snackbar'
 import {
   NavigationProps,
   pushScreen,
-  setStackRoot
 } from '../../utils/navigation-utils'
 import PresentationService from '../../services/PresentationService'
 import QrCustomMarker from '../../components/QrCustomMarker'
 import { Colors } from '../../utils/themes'
-import { ALERT, QR } from '../../constants/text'
+import { QR } from '../../constants/text'
 import { PresentationRequest } from '../../interfaces/presentationRequest'
 import ApiClient from '../../services/ApiClient'
 import { CredentialQrData, AlastriaTokenQrData } from '../../interfaces/qrData'
 import { SCREEN } from '../../constants/screens'
 import AlastriaIdentityService from '../../services/AlastriaIdentityService'
-import { AlertWithOutButtonDissmissable } from '../../utils/Alerts'
+import AlastriaTokenService from '../../services/AlastriaTokenService'
 
 const REACTIVATE_TIMEOUT_MS = 5000
 
@@ -34,30 +33,43 @@ const QrReader: NavigationFunctionComponent = ({
         text: QR.LOADING,
         duration: Snackbar.LENGTH_INDEFINITE
       })
-      let jwtData = qrReadEvent.data
-      // Only credentials and alastria token are json
-      if (isJson(jwtData)) {
-        if (isAlastriaToken(qrReadEvent)) {
-          await AlastriaIdentityService.linkToOrganization(qrReadEvent)
-          AlertWithOutButtonDissmissable(
-            ALERT.LINKING_SUCCESS.TITLE,
-            ALERT.LINKING_SUCCESS.SUBTITLE
-          )
+      const jwtData = qrReadEvent.data
+      const decodeJWT = AlastriaTokenService.decode(jwtData)
+      // @ts-ignore
+      const type = decodeJWT.payload.type[1]
+      // This code was changed. It is not really linking to an organization, it is styarting the proces of requesting a Credential Issuance or a Presentation request
+      if (jwtData) {
+        // Discriminate depending of the type received in payload
+        if (type === 'US221') {
+          // TODO: rename function in service
+          const response = await AlastriaIdentityService.linkToOrganization(qrReadEvent, type)
+
+          response.verifiableCredential.forEach((credential: string) => {
+            const decodedJWT = PresentationService.decodePresentationRequest(credential)
+            checkPayloadType(decodedJWT, credential)
+          })
           Snackbar.dismiss()
-          setStackRoot(componentId, SCREEN.ACCREDITATION_LIST)
           return
         } else {
-          jwtData = await getCredentialWithSecret(qrReadEvent)
+
+          const response = await AlastriaIdentityService.linkToOrganization(qrReadEvent, type);
+
+          (async () => {
+            if (response.presentationRequest.length > 0) {
+              const presentation = response.presentationRequest[0]
+              const decodedJWT = PresentationService.decodePresentationRequest(presentation)
+
+              const serviceProviderPublicKey = await PresentationService.getPublicKeyFromDid(decodedJWT)
+
+              if (PresentationService.verify(jwtData, serviceProviderPublicKey)) {
+                checkPayloadType(decodedJWT, presentation)
+              }
+            }
+          })()
+
         }
       }
-      const decodedJWT = PresentationService.decodePresentationRequest(jwtData)
-      const serviceProviderPublicKey = await PresentationService.getPublicKeyFromDid(
-        decodedJWT
-      )
 
-      if (PresentationService.verify(jwtData, serviceProviderPublicKey)) {
-        checkPayloadType(decodedJWT, jwtData)
-      }
       Snackbar.dismiss()
     } catch (error) {
       Snackbar.show({
@@ -67,6 +79,7 @@ const QrReader: NavigationFunctionComponent = ({
     }
   }
 
+  // Unused functions for now. LinkTo Organization is actually Getting a credential
   const isJson = (str: string) => {
     try {
       JSON.parse(str)
@@ -99,6 +112,7 @@ const QrReader: NavigationFunctionComponent = ({
     decodedJWT: PresentationRequest,
     jwtData: string
   ) => {
+    console.log(JSON.stringify(decodedJWT.payload, null, 2))
     if (decodedJWT.payload.pr) {
       pushScreen(componentId, SCREEN.CREDENTIAL_PR_INFO, {
         presentationRequest: decodedJWT.payload
